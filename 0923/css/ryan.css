@@ -1,0 +1,110 @@
+*{margin:0; padding:0;}
+
+.bigbox{
+    width:500px;
+    height:500px;
+    position: relative;
+    border: 1px dotted #333;
+    margin: 100px auto 0;
+}
+.ear{
+    width:150px;
+    height:150px;
+    border:10px solid #333;
+    border-radius: 50%; /* 모서리 둥글게 */
+    background-color:#d59729;
+    position:absolute;
+    top: 20px;
+}
+.ear.left{
+    left:40px;
+}
+.ear.right{
+    right:40px;
+}
+.face{
+    position:absolute;
+    width:500px;
+    height:450px;
+    border: 10px solid #333;
+    border-radius: 50%;
+    bottom: 0;
+    background-color:#d59729;
+    box-sizing: border-box;  /* 원의 선 두께 포함하여 500*450으로 사이징 */
+}
+.eyebrow{
+    width:100px;
+    height:19px;
+    border: 1px solid black;
+    border-radius:7px;
+    background: black;
+    position:absolute;
+    top:120px;
+}
+.eyebrow.left{left:100px;
+transform: rotate(340deg);}
+.eyebrow.right{right:100px;
+    transform: rotate(20deg);}
+
+.eyeball{
+    width:27px;
+    height:27px;
+    border:1px solid black;
+    border-radius: 50%;
+    background:black;
+    position:absolute;
+    top:180px;
+}
+.eyeball.left{left:140px;}
+.eyeball.right{right:140px;}
+
+.nose{
+    width:27px;
+    height:27px;
+    border:1px solid black;
+    border-radius: 50%;
+    background:black;
+    position:absolute;
+    top: 240px;
+    left: 225px;
+    z-index: 5;
+}
+
+.mouth{
+    width:80px;
+    height:74px;
+    border:10px solid black;
+    box-sizing:border-box;
+    border-radius: 50%;
+    background:white;
+    position:absolute;
+    top:250px;
+}
+.mouth.left{left:170px;}
+.mouth.right{right:170px;}
+
+.mouth_cover{
+    position:absolute;
+    width:40px;
+    height:39px;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    background-color:rgb(255, 255, 255);
+    top:2px;
+    /* transform: rotate(45deg); */
+}
+.mouth_cover.left{left:42px;}
+.mouth_cover.right{right:42px;}
+
+/* .mouth1{
+    width:50px;
+    height:50px;
+    border:1px solid white;
+    border-radius: 50%;
+    background:white;
+    position:absolute;
+    top:250px;
+    left:215px;
+} */
+
+

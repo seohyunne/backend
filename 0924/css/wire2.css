@@ -1,0 +1,124 @@
+/* http://bhher1.dothome.co.kr/vertical.html */
+
+*{margin:0; padding:0;}
+ul{list-style:none;}
+
+#wrap{ 
+    width:1000px;
+    height:650px;
+}
+header{
+    width:200px;
+    height:650px;
+    background-color:hotpink;
+    float:left;
+}
+h1{
+    margin-top:10px;
+    margin-left:10px;
+}
+
+.gnb{
+    border: 1px solid #333;
+    width:150px;
+    margin-left: 22px;
+    margin-top: 10px;
+    overflow:hidden;
+}
+.gnb>li{
+    position:relative;
+}
+
+/* .gnb>li{position:relative;} */
+.gnb li a{
+    display:block;
+    text-decoration: none;
+    width: 150px;
+    height: 40px;
+    line-height:40px;
+    margin: 0 auto;
+    text-align:center;
+    background-color:white;
+    color:#333;
+}
+.gnb>li>ul{
+    display:none;
+    /* float:left; */
+    position:absolute;
+    left:100px;
+}
+/* .gnb li:hover a{
+    background-color:#333;
+    color:white;
+
+    float:left;
+} */
+
+.gnb>li>a{
+    background-color:hotpink;
+    color:white;
+}
+.gnb li:hover ul{
+    display:block;
+}
+.gnb li a:hover {
+    background-color:#333;
+    color:white;
+}
+
+
+#main{
+    width:800px;
+    height:650px;
+    float:left;
+    background-color: hotpink;
+}
+#img_slide{
+    width:100%;
+    height:350px;
+    background-color:pink;
+}
+section{
+    width:100%;
+    height:200px;
+    background-color: gray;
+}
+article{
+    width:33.33%;
+    height: 200px;
+    float:right;
+}
+article.notice{
+    background-color:skyblue;
+    float:left;
+}
+article.banner{
+    background-color:lightcyan;
+    float:left;
+}
+article.icons{
+    background-color:lavender;
+    float:right;
+}
+
+
+
+
+footer .f_logo{
+    width:200px;
+    height:100px;
+    background-color: chocolate;
+    float:left;
+}
+footer .f_menu{
+    width:600px;
+    height:50px;
+    background-color: greenyellow;
+    float:right;
+}
+footer .f_copy{
+    width:600px;
+    height:50px;
+    background-color: rosybrown;
+    float:right;
+}

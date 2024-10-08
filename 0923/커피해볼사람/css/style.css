@@ -1,0 +1,115 @@
+*{
+    margin:0;
+    padding:0;
+}
+.wrap{
+    width:900px;
+    margin: 0 auto;  /* 전체 중앙 정렬 */
+}
+header{
+    position:relative;
+    /* position"relative; 를 주석처리 할 경우 글자가 화면의 하단으로 감
+    즉, 기준이 화면으로 변경 */
+    height:300px;
+    background: url(../images/top.jpg);
+    background-size: cover;
+}
+.logo{
+    position:absolute;
+    bottom:50px;
+    right:50px;
+    color:#fff;    
+}
+/* margin으로 처리하기 힘든 경우,
+부모에 position:relative; 자식에 position:absolute; 처리 */
+nav{
+    width:900px;
+    height:70px;
+    /* 높이를 따로 주거나 overflow:hidden 주기 */
+    background-color: #2a1b0a;
+}
+nav ul{
+    list-style:none;
+    /* 블릿 없애기 */
+}
+nav ul li{
+    float:left;
+    margin-left:23px;
+    margin-top:15px;
+}
+nav ul li a{
+    display:block; /* a 요소는 인라인 요소이므로 넓이, 높이 주기 위해 블럭 요소로 변경 */
+    color: white;
+    width:150px;
+    height:40px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius:20px;
+    text-align: center;
+    line-height: 40px; /* 높이와 줄간격 같으면 세로 중앙 정렬 가능!! */
+    text-decoration: none;/* 밑줄 없애기 */
+    font-weight: bold;
+}
+nav ul li a:hover{
+    color:rgb(255, 10, 153);
+    text-decoration:underline;
+    background-color:#fff;
+}
+.content{
+    overflow:hidden;
+    /* overflow: hidden; 또는 height:550px; 주기 - 둘 중에 하나만 해도 됨 */
+}
+section{
+    width:650px;
+    height:550px;
+    background-color:#ccc;
+    float:left;
+}
+section h3{
+    text-align:center;
+    padding: 10px 0;
+}
+section article{
+    padding:10px 10px;
+    width: 270px;
+    height: 200px;
+    border: 1px solid #333;
+    float: left;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+article h4{
+    background: url(../images/kong.png) no-repeat;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+article p{
+    line-height: 170%; 
+    text-align:justify;  /* 양쪽 정렬 */
+}
+article:hover{
+    background-color:aliceblue;
+}
+aside{
+    width:250px;
+    height:550px;
+    background-color:#726954;
+    float:left;
+    text-align:center; /* 중앙정렬이 상속됨 */
+}
+aside h3{
+    padding: 10px 0;
+}
+aside img{
+    width:220px;
+    padding-bottom:10px;
+}
+footer{ 
+    /* 책 페이지 333 참고 */
+    /* clear:both; - float 취소 */
+    /* clear 처리 안하면 width가 550px일 때 footer가 옆의 여백에 따라옴 */
+    height:60px;
+    background-color:#333;
+    color:#fff;
+    text-align:center;
+    line-height:60px;
+}

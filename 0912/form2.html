@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    ul{list-style-type: none;} 
+    /* 블릿 없애기 (list 만들 때 앞에 생기는 동그라미) */
+
+    li{line-height:50px;}
+    /* line-height - 줄 간격 */
+
+    label{width:120px; float:left;}
+    /* label에만 간격, float 주기 => 깔끔해짐 */
+</style>
+
+
+</head>
+<body>
+    <form action="abc.php" method="post">
+        <ul>
+            <li>
+                <label for="r-name">이름</label>
+                <input type="text" name="r-name" id="r-name">
+            </li>
+            <li>
+                <label for="r-pass">패스워드</label>
+                <input type="password" name="r-pass" id="r-pass">
+                <!-- type="password" 작성 시 가려짐 -->
+            </li>
+            <li>
+                <label for="r-phone">휴대폰</label>
+                <input type="text" name="r-phone" id="r-phone">
+            </li>
+            <li>
+                <label for="r-email">이메일</label>
+                <input type="email" name="r-email" id="r-email">
+            </li>
+            <li>
+                <label for="r-addr">배송주소</label>
+                <input type="text" name="r-addr" id="r-addr">
+            </li>
+            <li>
+                <label for="d-day">배송 지정</label>
+                <input type="date" name="d-day" id="d-day">
+            </li>
+            <li>
+                <label for="memo">메모</label>
+                <textarea name="memo" id="memo" cols="40" rows="4"></textarea>
+                <!-- 가로로 40칸, 세로로 4줄 (엔터 치면 4줄 이상도 가능) -->
+            </li>
+
+            <li>
+                <input type="submit" value="예약하기">
+            </li>
+        </ul>
+    </form>
+</body>
+</html>

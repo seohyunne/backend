@@ -1,0 +1,287 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Play:wght@400;700&display=swap');
+
+*{margin:0; padding:0;}
+ul{list-style: none;}
+a{text-decoration: none; color: #bbb;}
+img{border:0;}
+
+body{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-color:#ffffff;
+}
+/* 동영상 (.video) 스타일 */
+.vid{
+    position:fixed;
+    width:100%;
+    height:100%;
+    opacity:0.9;
+    left:0;
+    top:0;
+}
+.vid video{
+    width:100%;
+    min-width:1920px;
+    position:relative;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+}
+h1{
+    position:fixed;
+    top:40px;
+    left:50px;
+    z-index:10;
+}
+header{
+    position:fixed;
+    /* position 없으면 넓이, 높이 100% 안 먹는데 fixed는 먹는다 */
+    width:700px;
+    height: 100%;
+    background: linear-gradient(-45deg,#e6fc55,#b9fb05,#97e031);
+    transform: skewX(-40deg);
+    left:-400px;
+}
+#gnb{
+    width:220px;
+    position:absolute;
+    right:0;
+    top:150px;
+}
+#gnb > li{
+    position:relative;
+    /* 하위메뉴 위치 지정을 위해 */
+}
+#gnb > li > a{
+    display:block;
+    width:220px;
+    height:50px;
+    font: bold 18px/3 play;
+    /* 폰트: 진하게 크기 18px 줄간격 3 글씨체 play */
+    box-sizing: border-box;
+    padding-right:40px;
+    text-align:right;
+    color:#222;
+}
+#gnb em{
+    display:block;
+    /* em은 인라인요소라 transform 안 먹음 */
+    transform:skewX(40deg)
+}
+#gnb > li.on >a,
+#gnb > li:hover >a{
+    background-color:#111;
+    color:white;
+}
+#gnb li ul{
+    position: absolute;
+    left:0px;
+    top:0;
+    opacity:0;
+    visibility: hidden;
+    transition: all 0.6s;
+    /* display: none; 과 비슷한 기능 */
+}
+/* #gnb li:nth-child(2) ul{
+    visibility: visible;
+} */
+#gnb li:hover ul{
+    left:220px;
+    opacity: 1;
+    visibility: visible;
+    /* 왼쪽에서 오른쪽으로 서서히 나타남 ! */
+}
+#gnb ul a{
+    display: block;
+    width: 150px;
+    background-color: #222;
+    font: bold 16px/2.5 arial;
+    color: #fff;
+    box-sizing:border box;
+    padding-left: 50px;
+    margin-bottom:3px;
+    transition: all 0.4s;
+    border-bottom: 1px solid #69fb05;
+}
+#gnb ul a:hover{
+    background-color: #b9fb95;
+    color:#333;
+}
+
+/* SNS 버튼 (웹폰트 아이콘) 스타일 */
+#sns{
+    position:fixed;
+    top: 60px;
+    right:50px;
+}
+#sns li{
+    float:left;
+    margin-right: 30px;
+}
+
+#sns .fa{
+    font-size: 25px;
+    color:#69fb05;
+    opacity:0.6;
+    transition: all 0.6s;
+}
+#sns .fa:hover{
+    opacity: 1;
+    transform:scale(1.2);
+}
+/* 크기 1.2배 증가 */
+
+
+/* 텍스트상자 스타일 */
+.textBox{
+    width:350px;
+    height: 280px;
+    position: fixed;
+    top:280px;
+    right:70px;
+    border: 1px solid white;
+}
+.txt{
+    position: absolute;
+    top: 220px;
+    right:5px;;
+    color:white;
+    font-size:32px;
+    font-family: play;
+    letter-spacing: -1px;  /* 글자간격 */
+}
+.txt strong{
+    color:#b9fb95;
+    font:bold 34px arial;
+    margin-left:20px;
+}
+.tit{
+    position:absolute;
+    top:0; left:0;
+    font-size:160px;
+    color:#69fb05;
+    font-family:monoton;
+    letter-spacing: -1px;
+}
+.tit em{
+    font-family:play;
+    font-size: 50px;
+    color:white
+}
+
+/* 컨텐츠 박스 스타일 */
+#side{
+    position:fixed;
+    bottom:0;
+    width:800px;
+    height:100%;
+    background-color: black;
+    transform: skewX(-40deg);
+    opacity: 0.5;
+    right: -800px;
+    transition: all 0.6s;
+}
+#side:hover{
+    right:-500px;
+    opacity: 0.8;
+}
+#side .con{
+    width:400px;
+    height:100%;
+    position:absolute;
+    left: 150px;
+    bottom:0;
+    background-color: black;
+    padding: 10px;
+    transition: all 1s;
+}
+#side:hover .con{
+    left:50px;
+}
+/* 클릭하면 서서히 나타남 */
+
+#side .con p{
+    width: 300px;
+    height:100px;
+    left:50px;
+    bottom:0;
+    position:absolute;
+    transform: translateX(200px);
+    /* 오른쪽으로 200px 이동 */
+}
+#side .con p:nth-child(1){
+    bottom: 270px;
+    transition: all 0.4s;
+}
+
+#side .con p:nth-child(2){
+    bottom: 160px;
+    transition: all 0.8s;
+}
+
+#side .con p:nth-child(3){
+    bottom: 50px;
+    transition: all 1.2s;
+}
+
+#side .con:hover p{
+    transform: translateX(0);
+} 
+/* 이거 해야 마우스 커서 올라갔을 때 사진이 끝까지 나옴 */
+
+#side .con p em{
+    display: inline-block;
+    color:#a0bd50;
+    transform: skewX(40deg);
+    font: bold 16px arial;
+}
+#side .con p img{
+    width:300px;
+    height:70px;
+    opacity: 0.3;
+    transition: all 0.6s;
+}
+#side .con p img:hover{
+    opacity:1;
+}
+
+#side .btn{
+    width:150px;
+    height: 50px;
+    position: absolute;
+    bottom: 40px;
+    left: 100px;
+    color:#b9fb95;
+    transform:skewX(40deg);
+    border: 1px solid white;
+}
+
+.btn i{
+    position: absolute;
+    right:0;
+    font-size: 60px;
+}
+.btn i:nth-child(1){
+    animation: arrow linear 1.5s 0s infinite;
+}
+/* 애니메이션명 ?? 진행시간 딜레이시간 무한반복 */
+.btn i:nth-child(2){
+    animation: arrow linear 1.5s 1.5s infinite;
+}
+.btn i:nth-child(3){
+    animation: arrow linear 1.5s 3s infinite;
+}
+@keyframes arrow{
+    0%{
+        right: 0;
+        transform: scale(1);
+        opacity:1
+    }
+    100%{
+        right: 100px;
+        transform: scale(1.5);
+        opacity:0;
+    }
+}

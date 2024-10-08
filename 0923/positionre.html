@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>static</title>
+    <style>
+        .box{
+            width:200px;
+            height:200px;
+        }
+        .box1{
+            background-color:sandybrown;
+        }
+        .box2{
+            background-color:powderblue;
+        }
+        .box3{
+            position:relative;
+            background-color:pink;
+            top:50px;
+            left:50px;
+            z-index: 1;
+            /* 순서 올리기 (순서 설정을 위한 명령어)
+            z-index: n 에서 n이 클 수록 더 위로 올라옴 */
+        }
+        .box4{
+            background-color:lightgreen;
+            position:relative;
+            /* z-index: 2; 로 하면 박스4가 위로 온다. */
+        }
+        /* 
+        - relative의 특징 - 
+        1. 자리값이 있다. (원래 자리를 뺏기지 않음)
+        2. top, left로 이동 가능하다.
+        3. absolute의 부모 역할을 한다.
+        4. 기준 위치가 원래 자기 자리이다.
+        5. 겹칠 수 있다.
+         */
+    </style>
+</head>
+<body>
+    <div class="box box1">박스1</div>
+    <div class="box box2">박스2</div>
+    <div class="box box3">박스3</div>
+    <div class="box box4">박스4</div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+*{margin:0; padding:0;}
+#container{
+    width:1200px;
+    border: 10px solid #333;
+    margin: 0 auto;
+}
+header{
+    width:100%; /* 부모 크기만큼 (1200px), 생략 가능 */
+    height:120px;
+    background: cadetblue;
+}
+nav{
+    width:100%;
+    height:70px;
+    background-color: pink;
+}
+nav ul{
+    list-style: none;
+}
+nav ul li{
+    float:left;
+    margin-left: 82px;
+    margin-top: 10px;
+    /* margin은 li에 줄 수 있다 */
+}
+nav ul li a{ /* a태그는 인라인요소 (넓이,높이 줄 수 없음) / 여기에 다 넣는 게 좋음~ */
+    display:block; /* 높이, 넓이 주기 위해 블럭화 */
+    width:200px;
+    height:50px;
+    /* a에 너비와 높이를 주면 li도 동일한 크기를 갖게 됨 */
+    /* background-color:lemonchiffon; */
+    text-align:center;
+    line-height: 50px;
+    text-decoration:none;
+    color:white;
+}
+nav ul li a:hover{
+    background-color: yellow;
+    color:black;
+    border-radius: 25px;
+}
+.main{ /* footer의 cleaR:both; 대신 main에 overflow:hidden; */
+    overflow:hidden;
+}
+.main aside{
+    width:300px;
+    height:600px;
+    background:burlywood;
+    float:left;
+}
+.main section{
+    width:900px;
+    height:600px;
+    background-color:cornflowerblue;
+    float:left;
+}
+footer{
+    /* clear:both; */
+    /* float 해제, 전체 높이 확보 가능 */
+    width:100%;
+    height:100px;
+    background-color:darkblue;
+    margin-top: 300px; /* 안 먹음 */
+}
+/* sidebar와 section에 float:left 주면
+footer도 따라 들어가는 성질이 있음. -> clear로 해결 but 좋은 방법 X */

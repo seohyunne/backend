@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attr</title>
+<style>
+     ul {
+		 list-style:none;
+   }
+	 li {
+		 display:inline-block;
+		 margin:10px;
+	 }
+		li a {
+			padding: 5px 20px;
+			font-size: 14px;
+			color: blue;
+			text-decoration: none;
+		}
+		.flat {
+			background:blue;
+			color:white;
+		}
+[class~="button"]{    /* 클래스 중 button이 포함된 것 (~=) */
+    border:2px solid black;
+    box-shadow:rgba(0,0,0,0.4) 5px 5px;
+}
+</style>
+</head>
+<body>
+    <h1>HTML5 표준안 사이트 </h1>
+	<ul>
+		<li><a href="http://www.w3c.org/TR/html" target="_blank">HTML</a></li>
+		<li><a href="https://www.w3.org/TR/selectors">CSS Selector Level 3</a></li>
+		<li><a href="https://www.w3.org/TR/css3-mediaqueries">미디어쿼리</a></li>		
+	</ul>
+    <ul></ul>
+		<li><a href="#">메뉴 1</a></li>
+		<li><a href="#">메뉴 2</a></li>
+		<li><a href="#" class="button">메뉴 3</a></li>
+		<li><a href="#" class="flat button" >메뉴 4</a></li>
+	</ul>
+</body>
+</html>
