@@ -1,0 +1,277 @@
+*{margin: 0;padding: 0;}
+ul{list-style: none;}
+a{text-decoration: none;}
+
+/* 데스크탑용 */
+@media screen and (min-width:1024px){
+#wrapper{
+    width:800px;
+    margin: 0 auto;
+}
+/* 마진 중첩 현상 (p.319 참고)
+부모, 자식 모두 블럭요소일 때 발생한다.
+자식에게 margin-top 주었을 때 부모에게 흡수되어 부모에게 적용되는 경우
+(여기서 h1에 margin-top 주면 header에 적용되는 현상 발생) 
+
+이를 피하려면?
+1. header h1에 margin-top 대신 padding-top 사용
+2. header h1에 float:left (사진은 background로 들어가므로 영향 x)
+3. 부모의 자식을 구분할 수 있는 border-top을 부모에게 주기
+(header에 border-top: 1px solid tramsparent; 투명선 !)
+*/
+header{
+    height: 205px;
+    background:  #f46075 url(../nav2.png) no-repeat 95% 50%;  /* 오른쪽 끝, 위아래 중앙 */
+    border-top: 1px solid transparent; 
+}
+header h1{
+    color:white;
+    margin-top: 50px;
+    margin-left:50px;
+}
+
+nav{
+    height:50px;
+    background-color:#aaa;
+}
+nav ul li{
+    float:left;
+    margin-left:48px;
+    margin-top:7px;
+}
+nav ul li a{
+    /* a에 크기 주면 li도 동일 크기 가짐 
+    margin 주려면 a 말고 li에 주기 !*/
+    display:block;
+    width:140px;
+    height:35px;
+    line-height:35px;
+    color:white;
+    font-weight: bold;
+    text-align:center;
+}
+nav ul li a:hover{
+    background-color:#f46075;
+    border-radius:18px;
+}
+section{
+    width:550px;
+    height:500px;
+    background-color:#87ceeb;
+    float:left;
+}
+
+section h2{
+    text-align: center;
+    margin: 15px 0;
+}
+section article{
+    width:220px;
+    height:180px;
+    float:left;
+    border: 1px solid #333;
+    padding: 10px;
+    margin: 5px 15px;
+}
+section article p{
+    font-size: 12px;
+}
+section article h3{
+    padding-bottom: 5px;
+}
+aside{
+    float:right;
+    background-color:#ffffdd;
+    width:250px;
+    height:500px;
+    text-align:center;
+}
+aside img{ margin-top: 10px;}
+aside h2{margin-top: 10px;}
+footer{
+    clear:both;
+    height:50px;
+    line-height:50px;
+    text-align:center;
+    background-color:#bdbdbd;
+    color:white;
+}
+}
+
+
+
+
+/* 핸드폰용 */
+@media screen and (max-width:600px){
+#wrapper{
+    width:100%;
+    /* margin: 0 auto; */
+}
+header{
+    height: 120px;
+    background:  #f46075 url(../nav2.png) no-repeat 95% 50%;  /* 오른쪽 끝, 위아래 중앙 */
+    background-size: 120px;
+    border-top: 1px solid transparent; 
+}
+header h1{
+    color:white;
+    margin-top: 25px;
+    margin-left:20px;
+}
+
+nav{
+    height:100px;
+    background-color:#aaa;
+}
+nav ul li{
+    float:left;
+    width:50%;
+    /* li는 현재 4등분 된 상태이고 a는 왼쪽에 붙어 있음
+    이를 해결하기 위해 a 에 margin: 0 auto; */
+    margin-top: 10px;
+}
+nav ul li a{
+    display:block;
+    width:140px;
+    height:35px;
+    line-height:35px;
+    color:white;
+    font-weight: bold;
+    text-align:center;
+    margin: 0 auto;
+    /* li 안에 중앙정렬 */
+ }
+nav ul li a:hover{
+    background-color:#f46075;
+    border-radius:18px;
+}
+section{
+    width:100%;
+    height:auto;
+    background-color:#87ceeb;
+    float:left;
+}
+
+section h2{
+    text-align: center;
+    margin: 15px 0;
+}
+section article{
+    width:85%;
+    height:auto;
+    border: 1px solid #333;
+    padding: 10px;
+    margin: 5px auto;
+}
+section article p{
+    font-size: 12px;
+}
+section article h3{
+    padding-bottom: 5px;
+}
+aside{
+    width:100%;
+    background-color:#ffffdd;
+    text-align:center;
+}
+aside img{ 
+    width:75%;
+    height:auto;
+    padding-top: 10px;
+}
+aside h2{margin-top: 20px;}
+footer{
+    clear:both;
+    height:50px;
+    line-height:50px;
+    text-align:center;
+    background-color:#bdbdbd;
+    color:white;
+}
+}
+
+
+
+/* 태블릿용 */
+@media screen and (min-width:601px) and (max-width:1023px){
+    #wrapper{
+        width:580px;
+        margin: 0 auto;
+    }
+    header{
+        height: 160px;
+        background:  #f46075 url(../nav2.png) no-repeat 90% 50%;  /* 오른쪽 끝, 위아래 중앙 */
+        background-size:170px;
+        border-top: 1px solid transparent; 
+    }
+    header h1{
+        color:white;
+        margin-top:30px;
+        margin-left:30px;
+    }
+    
+    nav{
+        height:50px;
+        background-color:#aaa;
+    }
+    nav ul li{
+        float:left;
+        margin-left:20px;
+        margin-top:7px;
+    }
+    nav ul li a{
+        display:block;
+        width:120px;
+        height:35px;
+        line-height:35px;
+        color:white;
+        font-weight: bold;
+        text-align:center;
+    }
+    nav ul li a:hover{
+        background-color:#f46075;
+        border-radius:18px;
+    }
+    section{
+        padding: 5px 0;
+        width:100%;
+        height:500px;
+        background-color:#87ceeb;
+        /* float:left; */
+    }
+    section h2{
+        text-align: center;
+        margin: 15px 0;
+    }
+    section article{
+        width:220px;
+        height:180px;
+        float:left;
+        border: 1px solid #333;
+        padding: 10px;
+        margin: 5px 23px;
+    }
+    section article p{
+        font-size: 12px;
+    }
+    section article h3{
+        padding-bottom: 5px;
+    }
+    aside{
+        padding: 5px 0;
+        background-color:#ffffdd;
+        width:100%;
+        height:200px;
+        text-align:center;
+    }
+    aside img{ margin-top: 10px;}
+    aside h2{margin-top: 10px;}
+    footer{
+        clear:both;
+        height:50px;
+        line-height:50px;
+        text-align:center;
+        background-color:#bdbdbd;
+        color:white;
+    }
+    }

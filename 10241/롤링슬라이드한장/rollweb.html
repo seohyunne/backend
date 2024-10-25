@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>rollweb</title>
+  <script src="http://code.jquery.com/jquery-3.7.1.js"></script>
+
+<style>
+  *{margin: 0;padding: 0;}
+  img{border:none; vertical-align: top;}
+  ul,li{list-style: none;}
+  #wrap{
+      width:960px;
+      margin: 0 auto;
+  }
+  header{
+      height:200px;
+      background-color: #ccc;
+  }
+  .img_slide{
+      width:960px;
+      height:400px;
+      position: relative;
+  }
+  #banner{width:4800px;}/*960*4  = 3840 + 960(복제) = 4800 - 여유있게 */
+  #banner li{ float:left;}
+  .prev{
+	position:absolute;
+	width:100px;
+	height:100px;
+	left:10px;
+	top:50%;
+	margin-top:-50px;
+}
+.next{
+	position:absolute;
+	width:100px;
+	height:100px;
+	right:10px;
+	top:50%;
+	margin-top:-50px;
+}
+
+</style>
+
+
+</head>
+<body>
+  <div id="wrap">
+    <header></header>
+    <div class="img_slide">
+      <ul id="banner">
+        <li><a href="#"><img src="img/p1.jpg" alt="사진1"></a></li>
+        <li><a href="#"><img src="img/p2.jpg" alt="사진1"></a></li>
+        <li><a href="#"><img src="img/p3.jpg" alt="사진1"></a></li>
+        <li><a href="#"><img src="img/p4.jpg" alt="사진1"></a></li>
+      </ul>
+      <p>
+        <a href="#" class="prev">
+            <img src="img/left1.png" alt="이전 버튼">
+        </a>
+        <a href="#" class="next">
+            <img src="img/right1.png" alt="다음 버튼">
+        </a>
+      </p>
+    </div>
+  </div>
+</body>
+<script>
+  // 첫번째 사진 클론하여 붙여넣기
+  var imgCopy = $('#banner li').eq(0).clone();
+  $('#banner').append(imgCopy);
+
+  // 버튼을 이용한 사진 이동을 위해 변수 설정하기
+  var num = 0;
+  var img_w = 960;
+
+  // next 눌렀을 때 오른쪽 사진으로 이동시키기
+  $('.next').click(function(){
+    if(num==4){
+      num==0;
+      $('#banner').css('margin-left','0');   
+    }
+    num++;
+    $('#banner').stop().animate({'margin-left':-num*img_w},300);
+    return false;
+  })
+
+</script>
+</html>

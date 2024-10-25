@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>any</title>
+<style>
+    .box{
+        width:60px;
+        height: 60px;
+        margin: 60px;
+
+        animation: rotate1 1.5s infinite, background1 1.5s infinite alternate;
+    }
+    @keyframes rotate1 {
+        from{
+            transform: perspective(120px)
+        }
+        /* from~to 랑 0%~100%랑 같음 */
+        50%{
+            trnasform: perspective(120px) rotateX(-180deg) rotateY(0deg);
+        }
+        to{
+            transform: perspective(120px)  rotateX(-180deg) rotateY(-180deg);
+        }
+    }
+
+    @keyframes background1{
+        0%{background:red;}
+        50%{background-color:green;}
+        100%{background-color:blue;}
+    }
+</style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

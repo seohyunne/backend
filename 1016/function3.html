@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function2</title>
+
+
+</head>
+<body>
+    <button id="btn1">버튼</button>
+</body>
+<script>
+    // 익명함수 사용 이유
+    // 1. 일회성 함수
+    setTimeout(function(){
+        console.log("2초 후 출력")
+
+    },2000) // 2000 = 2초
+
+    // 2. 코드의 간결성 - 버튼 클릭 시 간단한 동작을 코드에 바로 넣어 사용 가능
+    document.getElementById("btn1").addEventListener("click",function(){
+        alert('Button click');
+    });
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+</head>
+<body>
+    <h1>일정 시간 간격으로 값 증감시키기</h1>
+    <p>콘솔 패널을 열어 확인하세요</p>
+    <button onclick="clearInterval(stop1)">정지</button>
+    <button onclick="clearInterval(stop2)">정지</button>
+
+    <script>
+        var addNum = 0;
+        var subNum = 100;
+        
+        var stop1 = setInterval(auto1,2000);
+        var stop2 = setInterval(auto2,2000);
+        
+        // auto1 함수를 2초마다 실행 !!
+        setInterval(auto1,2000);
+        setInterval(auto2,2000);
+        function auto1(){
+            addNum++;
+            console.log(
+                "addNum: "+addNum
+            );
+        }
+
+        
+        function auto2(){
+            subNum--;
+            console.log("subNum: "+subNum);
+        }
+    </script>
+</body>
+</html>

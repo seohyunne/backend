@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+</head>
+<script>
+    function myFnc(name,area){
+        document.write("안녕하세요. "+ name + "입니다.","<br>");
+        document.write("사는 곳은 "+ area + "입니다.","<br>");
+
+    }
+    myFnc("홍당무","서울");
+    myFnc("깍두기","부산");
+</script>
+<body>
+    <button onclick="myFnc('홍당무','서울')">버튼1</button>
+    <button onclick="myFnc('깍두기','부산')">버튼2</button>
+</body>
+</html>

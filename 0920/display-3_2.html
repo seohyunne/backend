@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav{
+
+        }
+        nav ul{
+            list-style: none;
+            height:200px;
+            padding-bottom:20px;
+        }
+        nav ul li{
+        float:left;
+            /* 인라인 블럭의 단점 : 사이에 간격 발생 */
+            width:200px;
+            height:50px;
+            background-color:blueviolet;
+            text-align: center;
+            line-height: 50px; 
+            /* 가로 가운데 정렬 : 높이와 줄간격 모두 50 
+                          ====> 높이와 줄간격 같으면 중앙정렬 !! */
+        }
+        nav ul li a{
+            color:white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">애완견 종류</a></li>
+            <li><a href="#">입양하기</a></li>
+            <li><a href="#">건강돌보기</a></li>
+            <li><a href="#">더불어 살기</a></li>
+        </ul>
+    </nav>
+    <div class="img1">
+        <img src="images/pic1.jpg" alt="">
+        <img src="images/pic2.jpg" alt="">
+        <img src="images/pic3.jpg" alt="">
+    </div>
+</body>
+</html>

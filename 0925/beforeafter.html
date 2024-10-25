@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>beforeafter</title>
+<style>
+    /* ㅎㅏ나 써도 되는데 두 개 쓰라고 권고 */
+ul::after{
+    content:"마지막";
+}
+ul::before{
+    content:"0번째";
+}
+
+</style>
+</head>
+<body>
+    <ul>
+        <li>첫번째</li>
+        <li>두번째</li>
+        <li>세번째</li>
+        <li>네번째</li>
+        <li>다섯번째</li>
+        <li>여섯번째</li>
+    </ul>
+</body>
+</html>
+<!-- p.445 -->

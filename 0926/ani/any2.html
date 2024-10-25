@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ballon</title>
+    <style>
+        .ballon{
+            position:relative;
+            width:116px;
+            height:160px;
+            top:100px;
+            /* border: 1px solid white;
+            border-radius:50%; */
+            background: url(img/bg-main1.png) no-repeat;
+            animation: ani 3s infinite alternate; 
+        }
+        .ballon.ballon1{
+            left:100px;
+            
+        }
+        .ballon.ballon2{
+            left:300px;
+
+        }
+        @keyframes ani{
+            0%{top:100px;}
+            100%{top:500px;}    
+        }
+
+    </style>
+</head>
+<body>
+    <div class="ballon ballon1"></div>
+    <div class="ballon ballon2"></div>
+</body>
+</html>

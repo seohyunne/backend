@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date</title>
+    <script>
+        var today= new Date();
+        // alert(today);
+        var nowMonth = today.getMonth()+1;
+        var nowDate =today.getDate();
+        var nowDay=today.getDay();
+        var nowYear=today.getFullYear();
+        var nowHours=today.getHours();
+        var nowMinutes=today.getMinutes();
+        var nowSeconds=today.getSeconds();
+        var yoil;
+
+        if(nowDay== '0'){
+            yoil="일";
+        }
+        else if(nowDay=='1'){
+            yoil="월";
+        }
+        else if(nowDay=='2'){
+            yoil="화";
+        }
+        else if(nowDay=='3'){
+            yoil="수";
+        }
+        else if(nowDay=='4'){
+            yoil="목";
+        }
+        else if(nowDay=='5'){
+            yoil="금";
+        }
+        else if(nowDay=='6'){
+            yoil="토";
+        }
+        
+        document.write("<h1>오늘 날짜 정보</h1>");
+        document.write("현재 년도: "+nowYear,"년<br>");
+        document.write("현재 월: "+nowMonth,"월<br>");
+        document.write("현재 일: "+nowDate,"일<br>");
+        document.write("현재 요일: "+yoil+"요일","<br>");
+        document.write("<h1>현재 시간 정보</h1>")
+        document.write("현재 시간: "+nowHours,"시<br>");
+        document.write("현재 분: "+nowMinutes,"분<br>");
+        document.write("현재 초: "+nowSeconds,"초<br>");
+
+        document.write(nowYear+"년 "+nowMonth+"월 "+nowDate+"일 "
+            +nowHours+"시 "+nowMinutes+"분 "+nowSeconds+"초<br>");
+
+        document.write(`${nowYear}년 ${nowMonth}월 ${nowDate}일<br>`);
+
+        document.getElementById("year").innerHTML = nowYear;
+
+    </script>
+</head>
+<body>
+    <h1>
+        <span id="year">0000</span>년
+        <span id="month">00</span>월
+        <span id="date">00</span>일
+        <span id="day">0</span>요일
+        <span id="hour">00</span>시
+        <span id="minute">00</span>분
+        <span id="second">00</span>초
+        
+    </h1>
+</body>
+</html>

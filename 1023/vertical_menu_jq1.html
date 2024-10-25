@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vertical메뉴-제이쿼리</title>
+    <script src="http://code.jquery.com/jquery-3.7.1.js"></script>
+    <style>
+        *{margin:0; padding:0;}
+        body{font-family: arial; font-size:15px;}
+        ul{list-style:none;}
+        a{text-decoration: none;}
+        #navi{
+            width: 200px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        #navi>li>a{
+            display:block;
+            height:36px;
+            background-color:pink;
+            line-height: 36px;
+            border-top: 1px dotted #fff;
+            color:white;
+        }
+        #navi .sub li{
+            background-color:lavender;
+        }
+        #navi .sub li a{
+            display:block;
+            height:36px;
+            line-height: 36px;
+            color:black;
+        }
+        #navi .sub li a:hover{
+            background-color: pink;
+            color:white;
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        $(function(){
+
+            $('#navi li ul').hide(); // 모든 ul 숨김
+
+            $('#navi>li>a').click(function(){
+                var abc = $(this).next('.sub').css('display');
+                // alert(abc);
+                if(abc=='none'){ // 클릭한 요소의 다음(sub)이 닫혀있으면(none)
+                    $('.sub').slideUp(); // 모든 .sub를 닫고
+                    $(this).next('.sub').slideDown(); // 내가 클릭한 요소의 sub만 열기
+                }else{
+                    $(this).next('.sub').slideUp();
+                } // 이거 넣으면 클릭 시 닫히기까지 구현 가능
+                return false;
+            })
+        })
+    </script>
+</head>
+<body>
+    <ul id="navi">
+        <li>
+          <a href="">Mainmenu1</a>
+          <ul class='sub'>
+                    <li><a href="#">sub1</a></li>
+                    <li><a href="#">sub2</a></li>
+                    <li><a href="#">sub3</a></li>
+                </ul>
+        </li>
+        <li>
+          <a href="">Mainmenu2</a>
+          <ul class='sub'>
+                    <li><a href="#">Sub1</a></li>
+                    <li><a href="#">Sub2</a></li>
+                    <li><a href="#">Sub3</a></li>
+                </ul>
+        </li>
+        <li>
+          <a href="">Mainmenu3</a>
+          <ul class='sub'>
+                    <li><a href="#">subone</a></li>
+                    <li><a href="#">subtwo</a></li>
+                    <li><a href="#">subthree</a></li>
+                </ul>
+        </li>
+      </ul>
+</body>
+</html>

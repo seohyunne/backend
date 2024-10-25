@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드</title>
+</head>
+<style>
+*{margin:0; padding:0;}
+header{
+    width:100%;
+    max-width:1920px;
+    height:200px;
+    margin: 0 auto;
+    background-color:pink;
+}
+.slide-container{
+    width:100%;
+    max-width:1920px;
+    height:480px;
+    position:relative;
+}
+.slider{
+    display:flex;  /* 옆으로 나열 */
+    transition: transform 0.5s;
+    /* transform: translateX(-50%); */
+    /* X축 방향으로 이동 */
+}
+button{
+    cursor:pointer;
+    /* 가짜 링크 - 손가락 모양 나옴 */
+    padding: 10px;
+}
+</style>
+<body>
+    <header>
+
+    </header>
+    <div class="slide-container">
+        <div class="slider">
+            <div class="slide">
+                <img src="images/slide1.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="images/slide2.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="images/slide3.jpg" alt="">
+            </div>
+        </div>
+        <button class="prev" onclick="prevSlide()">Previous</button>
+        <button class="next" onclick="nextSlide()">Next</button>
+    </div>
+</body>
+
+<script>
+    const slider = document.querySelector(".slider");
+    const slides = document.querySelectorAll(".slide"); 
+    // slide 클래스는 여러개이므로 querySelectorAll 로 해야 한다. (안하면 맨 첫번째 슬라이드만 선택함)
+    
+    var currentIndex = 0;
+
+    function showSlide(index){
+
+
+        if (index<0){
+            currentIndex = slides.length - 1;
+            // 인덱스 번호가 0보다 작을 때 (첫 번째 사진에서 prev 누를 때)
+            // curentIndex 에 2를 넣어 맨 마지막 사진으로 슬라이드
+        }
+        else if (index>=slides.length){
+            currentIndex = 0;
+            // 인덱스 번호가 0보다 작을 때 (마지막 사진에서 next 누를 때)
+            // curentIndex 에 0을 넣어 맨 첫번째 사진으로 슬라이드
+        }
+        else{
+            currentIndex = index;
+        }
+        // alert(currentIndex);
+        var transformValue = -currentIndex * 100 + '%';
+        // alert(transformValue);
+        slider.style.transform = "translateX("+transformValue+")";
+    }
+
+    function nextSlide(){
+        showSlide(currentIndex + 1);
+    }
+    function prevSlide(){
+        showSlide(currentIndex - 1);
+    }
+
+
+</script>
+</html>

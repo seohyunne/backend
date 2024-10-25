@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>컨버스</title>
+<style>
+    *{margin:0; padding:0;}
+    a{text-decoration: none;}
+
+    .bigbox{
+        width:1440px;
+        height:600px;
+        margin: 0 auto;
+    }
+    .title{
+        width: 1440px;
+        margin: 0 auto;
+        padding: 10px;
+    }
+    /* .title h1{
+        margin-left:20px;
+    } */
+    .left-img{
+        float:left;
+    }
+    .right-img{
+        float:right;
+    }
+    .center-box{
+        width:480px;
+        height:600px;
+        text-align:center;
+        background: url(images/bg.jpg);
+        float:left;
+    }
+    
+    .bigbox .center-box .men{
+        font-size: 18px;
+        
+    }
+    .bigbox .center-box .runstar{
+        font-size: 50px;
+        font-weight: bold;
+        padding: 20px;
+    } 
+    .bigbox .center-box .content{
+        margin: 35% 0;
+    }
+    .bigbox .center-box .button a{
+        display:block;
+        width: 200px;
+        padding: 20px;
+        font-weight: bold;
+        background-color: black;
+        color:white;
+        margin: 20px auto;
+        transition: all 0.5s
+    }
+    .bigbox .center-box .button a:hover{
+        background-color: #666;
+
+    }
+</style>
+</head>
+<body>
+    <div class="wrap">
+        <h1 class="title">Featured Collections</h1>
+        <div class="bigbox">
+            <img src="images/img1.jpg" alt="" class="left-img">
+            <img src="images/img2.jpg" alt="" class="right-img">
+            <div class="center-box">
+                <div class="content">
+                    <p class="men">FOR MEN</p>
+                    <p class="runstar">Run Star Trainer</p>
+                    <p>컨버스 스타 쉐브론 라인의 새로운 실루엣<br>런스타 트레이너</p>
+                    <p class="button"><a href="#">구매하기</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

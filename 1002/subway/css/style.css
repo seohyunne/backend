@@ -1,0 +1,678 @@
+*{margin:0; padding:0;}
+ul,li{list-style:none;}
+a{text-decoration:none;
+color:rgb(0, 0, 0);;}
+.cf::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+header{
+    width:100%;
+    height:165px;
+    border-top: 5px solid #009223;
+    position:relative;
+    z-index:15;
+    /* header 다음에 section 만들었기 때문에 메뉴 부분이 가려지는 현상 발생 -> 이걸로 해결 */
+}
+
+body{
+    overflow-x: hidden;
+    /* 반응형 만들 때 반드시 넣기.
+    없으면 좌우 스크롤 생김 */
+}
+
+header #h_top{
+    width:1200px;
+    height:90px;
+    margin: 0 auto;
+}
+#h_top>a{
+    position:absolute;
+    /* absolute는 margin: 0 auto;로 중앙정렬 불가 */
+    width:202px;
+    height:40px;
+    /* border: 1px solid red; */
+    left:50%;
+    transform: translateX(-50%);
+    top:25px;
+}
+#h_top>a img{
+    display: block;
+    width: 100%;
+    /* width:100%는 사실 안 해도 됨. -> 위에서 넓이,높이 줬기 때문에 */
+}
+#h_top ul{
+    /* position: absolute;
+    right:0;
+    top:30px; */
+    /* position absolute 사용하면 안됨. h_top의 오른쪽이 아닌 헤더의 오른쪽에 가게 되기 때문
+                                            (header:relative; 이므로..) */
+    float: right;
+    margin-top: 30px;
+}
+#h_top ul li{
+    float: left;
+    margin-left: 15px;
+}
+#h_top ul li a{
+    display:block;
+    height: 20px;
+    padding: 5px 0px;
+    /* 넓이는 padding으로 대체 */
+    font-size: 14px;
+    color:#747774
+}
+#h_top ul li a.earth{
+    color:white;
+    /* 내어쓰기 - 글자를 숨길 수 있다. */
+    background: url(../img/icon_global_subway.png) no-repeat center;
+}
+
+/* 메뉴 슬라이드 */
+nav{
+    width:100%;
+    height:75px;
+    border-bottom: 1px solid #aaa;
+    box-sizing: border-box;
+}
+nav>ul{
+    width:1200px;  /* 중앙정렬 하기 위해 넓이 지정 */
+    height: 75px;
+    margin: 0 auto;
+    text-align:center;
+    padding: 0 100px;
+    box-sizing: border-box;  /* padding 포함한 1200으로 만들어서 더 정확하게 중앙정렬 */
+    position: relative;
+    z-index: 15;
+    /* z-index 안 주면 배경 이미지에 가려서 사라짐 */
+}
+nav>ul>li{
+    float:left;
+}
+nav>ul>li>a{
+    display:block;
+    width:200px;
+    height:75px;
+    font-size:18px;
+    font-weight:bold;
+    line-height:75px;
+}
+nav ul ul a{
+    display:block;
+    font-size:15px;
+    color: #666;
+    padding: 8px 0 9px; /* 위 아래만 padding 지정 */
+    letter-spacing: -0.05;  /* 글자간격 */
+    font-weight: bold;
+}
+
+nav ul ul a:hover {
+    color:#009223;
+    text-decoration: underline;
+}
+
+nav ul li ul li{
+    width:200px;
+}
+
+nav ul li ul{
+    position:absolute;
+    top:75px;
+    text-align:center;
+    height:0;
+    overflow:hidden;
+    /* height:0; , overflow:hidden; 으로
+    높이 0 이상이면 숨김 처리 (하위메뉴 안 보이게) */
+    transition: all 0.4s;
+    padding-top: 20px;
+
+}
+nav ul:hover li ul{
+    height: 240px;
+}
+
+.shadow{
+    position: absolute;
+    left:0;
+    top:165px;
+    /* header가 relative 이므로 위에서부터 165 떨어진 곳에
+    shadow가 펼쳐져야 한다. (90+75) */
+    width:100%;
+    background-color:white;
+    height:0px;
+    transition: all 0.4s;
+}
+/* nav>ul과 shadow가 동일 선상에 있다 (형제관게)
+둘 다 position을 가지고 있다
+ shadow가 나중에 만들어 져서 더 위에 있으므로 메뉴가 나타나지 않는 것이 정상 
+    =====> 해결 :: nav>ul 에 z-index 주기 */
+
+nav>ul:hover + .shadow{
+    height:240px;
+}
+
+section{
+    width:100%;
+    position:relative;
+}
+/* 보통 section에 relative 지정 */
+.slide{
+    width:100%;
+    height:440px;
+    position:relative;
+}
+.slide .sg{
+    width:1920px;
+    height:440px;
+    position:relative;
+    margin: 0 auto;
+    overflow:hidden;
+}
+.slide .sg a{
+    width:1920px;
+    height:440px;
+    position: absolute;
+    left:0;
+}
+.slide .sg a.i_01{
+    background:url(../img/00_써브웨이_main_02_20200427112753722.jpg) no-repeat center center;
+}
+.slide .sg a.i_02{
+    left:100%;
+    background: url(../img/main_pc_1920x440_20200427112254027.jpg) no-repeat center;
+}
+.slide .sg a.i_03{
+    left:200%;
+    background: url(../img/main_pc_1920x440_20200528061058713.jpg) no-repeat center;
+}
+.slide .sg a.i_04{
+    left:300%;
+    background: url(../img/main_pc_1920x440_20200529050816305.jpg) no-repeat center;
+}
+
+.slide .dot{
+    position:absolute;
+    right: 500px;
+    bottom: 30px;
+    width:120px;
+    height:12px;
+
+}
+
+.slide .dot a{
+    float:left;
+    display:block;
+    width:12px;
+    height:12px;
+    background-color:#ddd;
+    border-radius: 30px;
+    text-indent: -9999px;
+    margin: 0 5px;
+}
+.slide .dot .on{
+    background-color:#ffce32;
+width:30px;}
+
+
+
+
+#sub{
+    width:1200px;
+    margin: 0 auto;
+    height: 80px;
+    position: relative;
+}
+#sub .sub_wrap{
+    position:absolute;
+    right:0;
+    top:-20px;
+}
+#sub .sub_wrap a{
+    display:block;
+    width:300px;
+    height:80px;
+    line-height:80px;
+    float:left;
+    font-size:22px;
+    font-weight:bold;
+    box-sizing: border-box;
+    /* padding-top:20px; */
+}
+
+.sw_left{
+    padding-left: 130px;
+    background:#ffce32 url(../img/icon_map.png) no-repeat 30% 50%;
+    border-radius: 30px 0 0 0;
+    color:#747774
+    /* 좌측 상단부터 시계방향 */
+}
+.sw_right{
+    padding-left:90px;
+    background:#009223 url(../img/icon_franchise.png) no-repeat 20% 50% ;
+    border-radius: 0 0 30px 0;
+    color:white;
+}
+
+/* 하단 메뉴 창 */
+.section02{
+    width:100%;
+}
+.s02_wrap{
+    width:1200px;
+    height:560px;
+    margin: 0 auto;
+    padding-top: 30px;
+    position:relative;
+    /* overflow:hidden; */
+    /* 여기 수정 필요 ★★★★★★★★★★★ */
+} /* 실제 높이: 560+60=620px */
+
+
+/* 서브웨이 문구 + 오른쪽 메뉴 바 */
+.menu_top{
+    width:1200px;
+    height:70px;
+    background: url(../img/bul_tit.png) no-repeat 0 50%;
+}
+.menu_top h3{
+    height:70px;
+	padding:12px 0 0 30px;
+	font-size:40px;
+	box-sizing:border-box;
+	width:50%;
+	float:left;
+}
+.menu_top .mt_right{
+	float:right;
+	padding-top:30px;
+}
+.menu_top .mt_right li{
+	float:left;
+	padding-right:25px;
+	margin-right:23px;
+	position:relative;
+
+}
+.menu_top .mt_right li a{
+    font-weight:bold;
+    color:#666;
+}
+
+.menu_top .mt_right li.on a{
+    color:#009223;
+}
+
+.menu_top .mt_right li::after{
+    content:"";
+    width: 1px;
+    height:15px;
+    background-color: #333;
+    position:absolute;
+    right:0px;
+    top:3px;
+}
+.menu_top .mt_right li:last-child::after{
+    display:none;
+}
+
+/* 샌드위치 나열 */
+
+.section02 .s02_wrap{
+    overflow:hidden;
+}
+.menu_wrap{
+    overflow:hidden;
+}
+
+.menu_wrap.menu{
+    width:1200px;
+    height:320px;
+    /* margin-top: 33px; */
+    /* overflow:hidden; */
+    padding-left:30px;
+}
+
+.menu ul li{
+    width: 260px;
+    height:320px;
+    float:left;
+    padding: 10px 5px;
+    text-align:center;
+    margin-right: 30px;
+    position:relative;
+    left:20px;
+}
+
+.menu ul li::after{
+    content:"";
+    width:98px;
+    height:98px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    background: url(../img/btn_more.png) no-repeat 0 0;
+    margin: -22px 0 0 -22px;
+    opacity:0;
+}
+.menu ul li:hover::after{
+    opacity:1;
+}
+
+/* .menu ul li:first-child{margin-left:0;} */
+.menu ul li img{
+    width:100%;
+    height:182px;
+}
+
+.menu ul li p{
+    font-size: 13px;
+    color:#999;
+    letter-spacing: -0.04em;
+}
+.menu ul li strong{
+    display:block;
+    margin: 2px 0 10px;
+    text-align: center;
+}
+/* .menu ul li:hover{
+    transform:scale(1.5);
+} */
+.menu ul li:hover p{
+    opacity:0;
+}
+.menu ul li:hover img{
+   width:350px;
+   height:238px;
+}
+.menu ul li:hover strong{
+    font-size:22px;
+    margin-top: -10px;
+}
+
+.s02_wrap a.prev{
+    display:block;
+    position: absolute;
+    width:50px;
+    height:50px;
+    top:50%;
+    left:-150px;
+    background: url(../img/icon_event_slider_arr.png) no-repeat 0 0;
+}
+.s02_wrap a.prev:hover{
+    background-position: 0 -50px;
+}
+.s02_wrap a.next{
+    display:block;
+    position: absolute;
+    width:50px;
+    height:50px;
+    top:50%;
+    right:-150px;
+    background: url(../img/icon_event_slider_arr.png) no-repeat -50px 0;
+}
+.s02_wrap a.next:hover{
+    background-position: -50px -50px;
+}
+
+
+/* section03 */
+#section03{
+    width:100%;
+    height:790px;
+    background: url(../img/bg_content.gif) repeat 0 0;
+}
+.s03_wrap{
+    width:1300px;
+    height:790px;
+    margin: 0 auto;
+    padding: 80px 0;
+    box-sizing: border-box;
+}
+.content{
+    width:100%;
+    height:300px;
+}
+.cont_01{
+    float:left;
+    width:400px;
+    height:100%;
+    background: url(../img/bg_utilization.png) no-repeat;
+    position:relative;
+    margin-left:55px;
+}
+.cont_02{
+    float:right;
+    width:825px;
+    height:100%;
+    background: url(../img/img_subway_history.png) no-repeat;
+    position:relative;
+}
+.con_top h3{
+    height:80px;
+    font-size:28px;
+    font-weight:bold;
+    color:#fff;
+    line-height: 40px;
+    letter-spacing: -0.03em;
+}
+.cont_01 h3{
+    position:absolute;
+    left:30px;
+    top:30px;
+}
+.cont_02 h3{
+    position:absolute;
+    lefT:410px;
+    top:38px;
+}
+.con_top a{
+    display: inline-block;
+    height:36px;
+    line-height: 36px;
+    padding: 0 8px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    color:#fff;
+    text-align: center;
+    font-size: 16px;
+
+}
+.cont_01 a{
+    position: absolute;
+    left:41px;
+    bottom: 42px;
+}
+.cont_02 a{
+	position: absolute;
+    left: 410px;
+    bottom: 42px;
+}
+
+
+.con_bott{
+    margin-top: 30px;
+}
+.cont_03{
+    float:left;
+    width:870px;
+    height:100%;
+    background-color: #fff;
+    margin-left:55px;
+    position: relative;
+    border-radius: 30px 0 30px 0;
+}
+
+.cont_03 .new{
+    float:left;
+    margin-top: 70px;
+    margin-left: 60px;
+    background:url(../img/bul_tit.png) no-repeat 0 0;
+}
+.cont_03 .new h2{
+    font-size: 32px;
+    padding-left: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+.cont_03 .new p{
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    line-height: 30px;
+}
+
+.cont_03 ul{
+    float:left;
+    margin-top: 60px;
+    margin-left: 100px;
+}
+
+.cont_03 ul li a{
+    display: inline-block;
+    color: #292929;
+    letter-spacing: -0.04em;
+    margin-top: 20px;
+    font-weight:bold;
+}
+.cont_03 ul li a:hover{
+    color:#009223;
+    text-decoration: underline;
+}
+
+.cont_03 ul li.more a{
+	color:#999;
+	font-size: 15px;
+	padding: 33px 0 8px;
+	margin-top:0;
+	text-decoration:none;
+}
+/* more 클래스 말고 a에 직접 주기.. */
+
+.cont_04{
+    float:left;
+    width: 270px;
+    height:100%;
+    margin-left:45px;
+    background: url("../img/270X300\ \(1\)_20230829025721267.jpg");
+    position:relative;
+    border-radius: 0 30px 0 30px;
+}
+
+#section04 .s04_wrap{
+    width:1200px;
+    height:70px;
+    margin: 40px auto;
+}
+.qmenu{
+    width:280px;
+    height:70px;
+    /* border: 1px solid #333; */
+    float:left;
+    margin-right:18px;
+    position:relative;
+}
+.qlogo{
+    width:70px;
+    height:70px;
+    background: url(../img/icon_quickmenu.png) no-repeat;
+    float:left;
+}
+.qmenu .qlogo2{
+    background-position: -70px 0;
+}
+.qmenu .qlogo3{
+    background-position: -140px 0;
+}
+.qmenu .qlogo4{
+    background-position: -210px 0;
+}
+.qmenu .txt{
+    display:block;
+    position:absolute;
+    top: 11px;
+    left: 80px;
+}
+.qmenu h3{
+    font-size: 17px;
+    font-weight: bold;
+}
+.qmenu p{
+    font-size:14px;
+    margin-top: 5px;
+    color:#999;
+}
+footer{
+    width:100%;
+    height:170px;
+    padding: 20px 0;
+    background-color:#292929;
+    color:#747774;
+    /* position:relative; */
+}
+.footer1{
+    width:1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.top-menu li{
+    float:left;
+}
+footer .top-menu li a{
+    display:block;
+    color:#747774;
+    padding: 20px 0;
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+/* footer .top-menu::after{
+    content:"";
+    width:100%;
+    height:2px;
+    background:#747774;
+} */
+
+.footer1 .top-menu{
+    width:1200px;
+    margin: 0 auto;
+}
+
+.footer1 .inf{
+    position:absolute;
+    top: 70px;
+}
+.footer1 .inf p{
+    display:block;
+    padding: 30px 0;
+    font-size:15px;
+}
+.footer1 .inf p .bar::after{
+    content:"ㅣ"
+}
+.sns a.insta{
+    display: block;
+    position: absolute;
+    width:50px;
+    height:50px;
+    background: url(../img/icon_sns_instar.png);
+    top: 100px;
+    right: 120px;
+}
+.sns a.facebook{
+    display: block;
+    position: absolute;
+    width:50px;
+    height:50px;
+    background: url(../img/icon_sns_facebook.png);
+    top: 100px;
+    right: 55px;
+}
+.sns a.insta:hover{
+    background-position: -100% 0;
+}
+.sns a.facebook:hover{
+    background-position: -100% 0;
+}

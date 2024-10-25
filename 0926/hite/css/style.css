@@ -1,0 +1,177 @@
+*{margin:0; padding:0;}
+
+
+.cf::after{
+    clear:both;
+    display:block;
+    content:"";
+}
+ul,li{list-style:none;}
+
+#wrap{
+    width:100%;
+    height:auto;
+    background-color:#f4f4f4;
+}
+
+section{
+    width:1070px;
+    height:1020px;
+    /* border: 1px solid hotpink; */
+    margin: 0 auto;
+}
+section h2{
+    padding: 60px 0 30px 0;
+    font-weight:normal;
+}
+
+#content{
+    width:1070px;
+    height:900px;
+    border: 1px solid hotpink;
+    position:relative;
+}
+
+#content div{
+    position:absolute;
+    display:none;
+}
+/* div와 a 크기 동일하게 설정하고 position만 relative*/
+#content div a{
+    display:block;
+    width:100%;
+    height:100%;
+    position:relative;
+}
+
+#content div a p{
+    position:absolute;
+    top:0;
+    left:0;
+    text-align:center;
+    opacity:0;
+    width:100%;
+    top:80px;
+    color:white;
+    font-size:13px;
+    padding-bottom:50px;
+    transition: all 0.5s;
+    background: url(../img/more.png) no-repeat 50% 100%;    
+    /* background-color:rgba(255,0,0,0.5); */
+}
+#content div a:hover p{
+    opacity:1;
+}
+
+#content div a::before{
+    content:"";
+    position:absolute;
+    background-color:rgba(4,69,244,0.85);
+    width:0%;
+    height:100%;
+    top:0;
+    left:0;
+    transition:all 0.2s
+}
+#content div a:hover::before{
+    width:100%;
+}
+
+/* 6,8번 사진만 따로 */
+#content div.img6 a::before,
+#content div.img8 a::before{
+    width:100%;
+    height:0%;
+}
+#content div.img6 a:hover::before,
+#content div.img8 a:hover::before{
+    height:100%;
+}
+
+/* img2 텍스트 위치 조정 */
+#content div.img2 a p{
+    top:40%;
+}
+
+#content div.img1{
+    /* position:absolute; */
+    /* 위에서 div에 absolute 일괄 처리 */
+    display:block;
+    width:260px;
+    height:260px;
+    left:0;
+    top:0;
+}
+#content .img2{
+    /* position:absolute; */
+    display:block;
+    width:260px;
+    height:530px;
+    left:270px;
+    top:0;
+}
+#content .img3{
+    display:block;
+    width:260px;
+    height:260px;
+    left:540px;
+    top:0;
+}
+#content .img4{
+    display:block;
+    width:260px;
+    height:260px;
+    left:810px;
+    top:0;
+}
+#content .img5{
+    display:block;
+    width:260px;
+    height:260px;
+    left:0px;
+    top:270px;
+}
+#content .img6{
+    display:block;
+    width:530px;
+    height:260px;
+    left:540px;
+    top:270px;
+}
+#content .img7{
+    display:block;
+    width:260px;
+    height:260px;
+    left:0px;
+    top:540px;
+}
+#content .img8{
+    display:block;
+    width:530px;
+    height:260px;
+    left:270px;
+    top:540px;
+}
+#content .img9{
+    display:block;
+    width:260px;
+    height:260px;
+    left:810px;
+    top:540px;
+}
+
+/* #content .img1::after{
+    content:"";
+    position:absolute;
+    background-color:rgba(0,0,255,0.5);
+    width:0%;
+    height:100%;
+    top:0;
+    left:0;
+    transition:all 0.3s
+}
+.img1 a:hover::after{
+    width:100%;
+}
+ */
+

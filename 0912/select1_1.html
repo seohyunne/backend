@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* select{vertical-align:top;} */
+
+    body{
+        background-color: #fff;
+        form fieldset{margin-bottom:25px;}
+        form legend{
+            font-weight: bold;
+            font-size:15px;
+        }
+    }
+form ul li{
+    list-style:none;
+    margin:15px 0;
+    /* 바깥 여백 위아래 15px 좌우 0 */
+}
+.reg{
+    font-size:14px;
+    width:110px;
+    font-weight: bold;
+    color: pink;
+    float:left;
+    margin-right:10px;
+    text-align:right;
+}
+</style>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>수강신청</legend>
+            <ul>
+                <li>
+                    <label class="reg" for="id">학번</label>
+                    <input type="text" id="id" autofocus>
+                </li>
+                <li>
+                    <label class="reg" for="name">이름</label>
+                    <input type="text" id="name">
+                </li>
+                <li>
+                    <label for="class" class="reg">전공학과</label>
+                    <select name="class" size="3" id="class" multiple>
+                        <option value="archi">건축공학과</option>
+                        <option value="mechanic">기계공학과</option>
+                        <option value="indust">산업공학과</option>
+                        <option value="elec">전기전자공학과</option>
+                        <option value="computer" selected>컴퓨터공학과</option>
+                        <option value="chemical">화학공학과</option>
+                    </select>
+                </li>
+            </ul>
+        </fieldset>
+    </form>
+</body>
+</html>

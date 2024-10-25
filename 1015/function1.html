@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+<style>
+    *{margin:0; padding:0;}
+    #galleryZone{
+        text-align:center;
+    }
+</style>
+<script>
+
+</script>
+</head>
+<body>
+    <div id="galleryZone">
+        <p><img src="images/pic_1.jpg" id="photo" alt=""></p>
+        <p class="buttons">
+            <button onclick="gallery(0)">이전</button>
+            <button onclick="gallery(1)">다음</button>
+        </p>
+    </div>
+    <script>
+        var num =  1;
+        function gallery(direct){
+            if (direct){
+                if (num==8) return; // num이 8이면 빠져나감 (동작x)
+                num++;
+            }else{
+                if (num==0) return;
+                num--;
+            }
+            console.log(num);
+            var imgTag =document.getElementById("photo");
+            var img1 = imgTag.getAttribute('src'); // src의 내용을 불러옴 (여기서는 위의 images/pic_1.jpg)
+            console.log(img1);
+
+            imgTag.setAttribute('src',"images/pic_"+num+".jpg");
+        }   
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    .container div{
+        width:100vw;
+        height:100vh;
+    }
+    .b1{
+        background-image: url(images/back1.jpg);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size:cover;
+        background-attachment: fixed;
+    }
+    .b2{
+        background-image: url(images/back2.jpg);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size:cover;
+        background-attachment: fixed;
+    }
+    .b3{
+        background-image: url(images/back3.jpg);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size:cover;
+        background-attachment: fixed;
+    }
+    .b4{
+        background-image: url(images/back4.jpg);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size:cover;
+        background-attachment: fixed;
+    }
+    /* .b5{
+        background-image: url(images/back5.jpg);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size:cover;
+        background-attachment: fixed;
+    } */
+
+    .b5{
+        background-color:red;
+        background: url(images/back5.jpg) fixed no-repeat 50% 50% / cover;
+        /* 슬래쉬 쓰는 이유? -> position, size 둘 다 숫자 쓰기 때문에 혼동될 우려 있음 
+        position은 위치 변경 불가 ! -> 위에서 fixed 앞에 쓰면 안된다. 
+        fixed랑 no-repeat는 위치 변경 가능. */
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="b1">배경1</div>
+        <div class="b2">배경2</div>
+        <div class="b3">배경3</div>
+        <div class="b4">배경4</div>
+        <div class="b5">배경5</div>
+    </div>
+</body>
+</html>

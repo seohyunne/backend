@@ -1,0 +1,129 @@
+*{margin:0; padding:0}
+
+.wrap{
+    width:100%;
+    height:1000px;
+    background-color:antiquewhite;
+    padding: 20px;
+}
+
+.bigbox{
+    width:1070px;
+    height:1000px;
+    border: 1px solid red;
+    margin: 50px auto;
+    position:relative;
+}
+
+.introduce p{
+
+    position:absolute;
+    font-size: 30px;
+}
+
+.box{
+    display:block;
+    width: 260px;
+    height: 260px;
+    position:absolute;
+}
+
+.box1{
+    position:absolute;
+    left:0;
+    top:0;
+}
+.box2{
+    position:absolute;
+    top: 0;
+    left: 270px;
+    height: 530px;
+}
+.box3{
+    position:absolute;
+    top: 0;
+    left: 540px;
+}
+.box4{
+    position:absolute;
+    top: 0;
+    left: 810px;
+}
+.box5{
+    position:absolute;
+    top: 270px;
+    left: 0;
+}
+.box6{
+    position:absolute;
+    width:530px;
+    top: 270px;
+    left: 540px;
+}
+.box7{
+    position:absolute;
+    top: 540px;
+    left: 0;
+}
+.box8{
+    position:absolute;
+    width:530px;
+    top: 540px;
+    left: 270px;
+}
+.box9{
+    position:absolute;
+    top: 540px;
+    left: 810px;
+}
+
+.box::before{
+    content:'';
+    position:absolute;
+    width:0%;
+    height:100%;
+    left:0;
+    top:0;
+    background-color:rgba(0,0,255,0.5);
+    transition:0.3s;
+}
+.box:hover::before{
+    width:100%;
+}
+
+.box6::before{
+    content:"";
+    width:100%;
+    height:0%;
+}
+.box6:hover::before{
+    height:100%;
+}
+.box8:before{
+    content:"";
+    width:100%;
+    height:0%;
+}
+.box8:hover::before{
+    height:100%;
+}
+
+.box p{
+    position:absolute;
+    width:100%;
+    height:100%;
+    font-size:14px;
+    left:0;
+    top:0;
+    padding-top:30%;
+    box-sizing: border-box;
+    opacity:0;
+    text-align:center;
+    transition: all 0.3s;
+    color:white;
+    background:url(../hite/more.png) no-repeat 50% 70%;
+}
+
+.box:hover p{
+    opacity:1;
+}

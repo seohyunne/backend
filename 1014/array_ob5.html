@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2차원 배열</title>
+<script>
+    var scores = [
+        [90,80,70],
+        [85,95,88],
+        [78,92,85]
+    ];
+// 각 과목별 합계와 평균을 저장할 변수 초기화
+    var ksum=0;
+    var esum=0;
+    var msum=0;
+    for (var i=0; i<scores.length ; i++){
+        ksum+=scores[i][0];
+        esum+=scores[i][1];
+        msum+=scores[i][2];
+    }
+
+    var kavg = ksum / scores.length;
+    var mavg = msum / scores.length;
+    var eavg = esum / scores.length;
+
+    document.write("국어 합계 : "+ksum,"<br>");
+    document.write("영어 합계 : "+esum,"<br>");
+    document.write("수학 합계 : "+msum,"<br>");
+
+    document.write("국어 평균 : "+kavg,"<br>");
+    document.write("영어 평균 : "+eavg,"<br>");
+    document.write("수학 평균 : "+mavg,"<br>");
+</script>
+</head>
+<body>
+    
+</body>
+</html>

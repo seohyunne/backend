@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>op1</title>
+    <script>
+        // console.log() ----> f12에서 확인 가능
+
+        // == 와 === 의 차이 ?
+        // == 는 모양만 같은지 판단. === 는 타입까지 
+        var a = '5';
+        var b = 5;
+        console.log(a==b); // trye
+        console.log(a===b); // false
+
+        // 다음 코드의 결과는?
+        var x = 10;
+        var y = 5;
+        x+=y; // x = x + y = 15
+        x*=2; // x = x * 2 = 30
+        console.log(x);
+
+        // 논리 연산자
+        var i = true;
+        var j = false;
+        console.log(i && j); // and
+        console.log(i || j); // or
+        console.log(!i); // not
+        console.log(!j);
+
+        // 삼항 연산자
+        let age = prompt("나이를 입력하세요.");
+        let message = age >= 18 ? "성인" : "미성년자";
+        console.log(message);
+        document.write(message);
+
+        // p.58 1번
+        var price1= 3000;
+        var price2= 6000;
+        var price3= 3000;
+        var price=price1+price2+price3
+        console(price>10000 ? "돈 관리 잘했어요!": price-10000+"원 초과")
+    </script>
+</head>
+<body>
+</body>
+</html>

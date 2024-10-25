@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    // 사용자의 이름을 입력받아 인사하는 프로그램
+
+    // var userName = prompt("이름을 입력하세요 : ", "홍길동");
+    // document.write("안녕하세요, "+userName+"님<br>");
+    // document.write(`안녕하세요, ${userName}님<br>`);
+
+    // 배열에 숫자 저장하기
+    var numbers = [1,2,3,4,5];
+    document.write(numbers,"<br>");
+
+    // for문으로 배열 요소 하나씩 출력
+    for (var i=0; i<numbers.length; i++){
+        document.write(numbers[i],"<br>");
+    }
+
+    // 객체 생성하기
+    let person = {
+        name : "홍길동",
+        age : 30
+    }
+    document.write(person.name,"<br>");
+    document.write(person.age,"<br>");
+
+    let personJson = JSON.stringify(person);   // Json 형식의 파일로 객체 리터럴을 변환
+    console.log(personJson);
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+    <style>
+    *{margin:0; padding:0;}
+    .abigbox{
+        width:1000px;
+        height: 250px;
+        border:5px solid tan;
+        margin: 20px auto;
+        padding-bottom:20px;}
+    .abigbox h2{
+        padding: 15px 0;
+        text-align: center;
+    }
+    .abox{
+        width:200px;
+        height:150px;
+        border: 1px solid #333;
+        float:left;
+        margin-left: 40px;
+        position:relative;
+    }
+    .abox img{display:block;}
+
+    .abox1::after{
+        content:"";
+        width:100%;
+        height:100%;
+        position:absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0,0,0,0.5);
+        opacity:0;
+        transition:0.3s;
+
+    }
+    .abox1:hover::after{
+        opacity:1;
+    }
+
+    /* 좌->우 애니메이션 */
+    .abox2::after{
+        content:"";
+        width:0%;
+        height:100%;
+        position:absolute;
+        top: 0;
+        left: 0;   /* 우->좌 하고 싶으면 left:0을 right:0으로 변경 */
+        background-color: rgba(0,0,255,0.5);
+        transition:0.4s;
+    }
+    .abox2:hover::after{
+        width:100%;
+    }
+
+    /* 위->아래 애니메이션 */
+    .abox3::after{
+        content:"";
+        width:100%;
+        height:0%;
+        position:absolute;
+        top: 0; /* 아래->위 하고 싶으면 bottom:0 으로 변경 */
+        left: 0;
+        background-color: rgba(0,0,255,0.5);
+        transition: all 0.4s;
+    }
+    .abox3:hover::after{
+        height:100%;
+    }
+    
+    /* 다른 방법으로 구현 */
+    .abox4{overflow:hidden}
+    .abox4::after{
+        content:"";
+        width:100%;
+        height:100%;
+        position:absolute;
+        top: 0;  
+        left: 100%;
+        background-color: rgba(0,0,255,0.5);
+        transition: all 0.4s;
+    }
+    .abox4:hover::after{
+        left:0
+    }
+    </style>
+</head>
+<body>
+    <div class="abigbox">
+        <h2>입양합시다</h2>
+        <div class="abox abox1">
+            <img src="img/d1.jpg" alt="강쥐1">
+        </div>
+        <div class="abox abox2">
+            <img src="img/d2.jpg" alt="강쥐2">
+        </div>
+        <div class="abox abox3">
+            <img src="img/d3.jpg" alt="강쥐3">
+        </div>
+        <div class="abox abox4">
+            <img src="img/d4.jpg" alt="강쥐4">
+        </div>
+    </div>
+</body>
+</html>

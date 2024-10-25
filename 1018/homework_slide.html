@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>국회도서관 슬라이드 과제</title>
+    <style>
+        *{margin:0; padding:0;}
+        ul li{list-style: none; float:left;}
+        a{text-decoration: none;}
+        #slide_wrap #frame #banner img{width:360px; height:175px; } 
+        /* #slide_wrap{
+            width: 500px;
+            height: 400px;
+            margin: 50px auto;
+            border: 5px solid pink;
+        } */
+        #frame{
+            position:relative;
+            width: 360px;
+            height:175px;
+            border: 2px solid navy;
+            margin: 60px auto;
+            overflow:hidden;
+        }
+        .button{
+            display:block;
+            /* position:absolute; */
+            width:364px;
+            height:27px;
+            line-height: 30px;
+            text-align:center;
+            background-color: rgba(1,1,1,0.3);
+            margin: 0 auto;
+            margin-top: -60px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="slide_wrap">
+        <div id="frame">
+            <ul id="banner">
+                <li><a href="#"><img src="img/img1.png" alt=""></a></li>
+                <li><a href="#"><img src="img/img2.png" alt=""></a></li>
+                <li><a href="#"><img src="img/img3.png" alt=""></a></li>
+                <li><a href="#"><img src="img/img4.png" alt=""></a></li>
+                <li><a href="#"><img src="img/img5.png" alt=""></a></li>
+            </ul>
+        </div>
+
+        <p class="button">
+            <a href="#" class="prev">
+                <img src="img/icon_left.png" alt="이전 버튼">
+            </a>
+            <a href="#" class="next">
+                <img src="img/icon_right.png" alt="다음 버튼">
+            </a>
+        </p>
+    </div>
+</body>
+<script>
+    var banner = document.querySelector("#banner");
+    var imgList = document.querySelectorAll("#banner li");
+    var show_num = 1;
+    var total = 5; 
+    var prev = document.querySelector(".prev");
+    var next = document.querySelector(".next");
+
+    var li_width = 360; //li크기 (이미지 가로 360px); 
+
+    var num = 0;
+
+    next.addEventListener('click',function(){
+        if(num==5){
+            num = 0;
+            banner.style.transition = 'none';
+            banner.style.marginLeft = 0;
+        }
+
+        setTimeout(function(){
+            num++;
+            banner.style.transition = 'margin-left 0.5s';
+            banner.style.marginLeft = -li_width * num +"px";
+        },50);
+
+        
+    prev.addEventListener('click',function(){
+        if(num==0){
+            num = 5;
+            banner.style.transition = 'none';
+            banner.style.marginLeft = -li_width * num + "px";
+            // 맨 끝의 사진의 위 -400px
+        }
+
+        setTimeout(function(){
+            num--;
+            banner.style.transition = 'margin-left 0.5s';
+            banner.style.marginLeft = -li_width * num +"px";
+        },50);
+    });
+})
+
+    
+function autoplay(){
+        if(num==5){
+            num = 0;
+            banner.style.transition = 'none';
+            banner.style.marginLeft = 0;
+        }
+
+        setTimeout(function(){
+            num++;
+            banner.style.transition = 'margin-left 0.5s';
+            banner.style.marginLeft = -li_width * num +"px";
+        },50);
+}
+setInterval(autoplay, 3000);
+</script>
+</html>

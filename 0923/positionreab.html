@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>static</title>
+    <style>
+        .box{
+            width:200px;
+            height:200px;
+        }
+        .bigbox{
+            width:700px;
+            height:500px;
+            border: 1px solid #333;
+            margin: 0 auto;
+            position: relative;
+        }
+        .box1{
+            background-color:sandybrown;
+        }
+        .box2{
+            background-color:powderblue;
+            position:absolute;
+            bottom: 0;
+            right: 0;
+            /* 부모인 bigbox를 기존으로 위치 선정 (bigbox의 우측 하단) */
+        }
+        .box3{
+            background-color:pink;
+        }
+        .box4{
+            background-color:lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1">박스1</div>
+    <div class="bigbox">
+        <div class="box box2">박스2</div>
+        <div class="box box3">박스3</div>
+    </div>
+        <div class="box box4">박스4</div>
+</body>
+</html>

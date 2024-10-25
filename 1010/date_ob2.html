@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date</title>
+
+</head>
+<body>
+    <h1>
+        <span id="year">0000</span>년
+        <span id="month">00</span>월
+        <span id="date">00</span>일
+        <span id="day">0</span>요일
+        <span id="hour">00</span>시
+        <span id="minute">00</span>분
+        <span id="second">00</span>초
+    </h1>
+
+
+    <script>
+        var today= new Date();
+        // alert(today);
+        var nowMonth = today.getMonth()+1;
+        var nowDate =today.getDate();
+        var nowDay=today.getDay();
+        var nowYear=today.getFullYear();
+        var nowHours=today.getHours();
+        var nowMinutes=today.getMinutes();
+        var nowSeconds=today.getSeconds();
+        var yoil;
+
+        if(nowDay== '0'){
+            yoil="일";
+        }
+        else if(nowDay=='1'){
+            yoil="월";
+        }
+        else if(nowDay=='2'){
+            yoil="화";
+        }
+        else if(nowDay=='3'){
+            yoil="수";
+        }
+        else if(nowDay=='4'){
+            yoil="목";
+        }
+        else if(nowDay=='5'){
+            yoil="금";
+        }
+        else if(nowDay=='6'){
+            yoil="토";
+        }
+        
+        document.write(nowYear+"년 "+nowMonth+"월 "+nowDate+"일 "
+            +nowHours+"시 "+nowMinutes+"분 "+nowSeconds+"초<br>");
+
+        document.write(`${nowYear}년 ${nowMonth}월 ${nowDate}일<br>`);
+
+        document.getElementById("year").innerHTML = nowYear;
+        // HTML문서에서 id가 'year'인 요소를 찾음
+        // .innerHTML - 해당 요소의 내부 html을 의미. 
+        // 이 값을 수정하면 해당 요소의 내용 바뀜 (0000 -> 2024)
+        // nowYear에 저장된 값을 HTML 요소에 넣는다
+
+        document.querySelector('#year').innerHTML = nowYear;
+        document.querySelector('#month').innerHTML = nowMonth;
+        document.querySelector('#date').innerHTML = nowDate;
+        document.querySelector('#day').innerHTML = yoil;
+        document.querySelector('#hour').innerHTML = nowHours;
+        document.querySelector('#minute').innerHTML = nowMinutes;
+        document.querySelector('#second').innerHTML = nowSeconds;
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector</title>
+</head>
+<body>
+    <div class="myClass">First Div</div> 
+    <div class="myClass">Second Div</div> 
+
+    <script>
+        // .myDiv 클래스가 여러 개인데 querySelectorAll 안 쓸 경우 첫 번째 요소만 선택함
+        const elements = document.querySelector(".myDiv"); // 첫 번째 myDiv 요소 선택 
+        console.log(elements.textContent); // "First Div" 출력
+
+        elements.forEach(function(el){
+            console.log(el.textContent);
+        });
+
+        // 위의 forEach문과 동일한 for문
+        // for (var i=0; i<elements.length;i++){
+        //     console.log(elements[i].textContent)
+        // }
+
+
+    </script>
+
+</body>
+</html>

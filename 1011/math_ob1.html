@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>math</title>
+</head>
+<script>
+    var num = 2.1234;
+    var maxNum= Math.max(10, 5, 8, 3),
+        minNum= Math.min(10,5,8,3),
+        roundNum = Math.round(num),
+        floorNum = Math.floor(num),
+        ceilNum = Math.ceil(num),
+        rndNum = Math.random();
+        piNum = Math.PI;
+
+    document.write(maxNum,"<br>"); //10
+    document.write(minNum,"<br>"); //3
+    document.write(roundNum,"<br>"); //2 -> 소수점 첫째 자리에서 반올림 
+    document.write(floorNum,"<br>"); //2 -> 소수점 첫째 자리에서 무조건 내림
+    document.write(ceilNum,"<br>"); //3 -> 소수점 첫째 자리에서 무조건 올림
+    document.write(rndNum,"<br>"); // 0~1 범위의 랜덤 난수
+    document.write(piNum,"<br>"); // 원주율
+</script>
+<body>
+    
+</body>
+</html>

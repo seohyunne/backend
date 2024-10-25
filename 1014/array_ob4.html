@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+<script>
+    var days=["일","월","화","수","목","금","토"];
+
+    var today=new Date();
+    alert(days[today.getDay()]+"요일");
+
+    var money = [1000,2000,500,10000,7500];
+    var total = 0
+    for (var i=0; i<money.length; i++){
+        total += money[i];
+    }
+    document.write(total+"원<br>");
+</script>
+</head>
+<body>
+    
+</body>
+</html>

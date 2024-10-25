@@ -1,0 +1,102 @@
+*{margin:0;
+padding:0;}
+.wrap{
+    width:800px;
+}
+header{
+    width:800px;
+    height:300px;
+    background-image: url(../images/top.jpg);
+    background-repeat: no-repeat;
+    background-size: auto;   
+}
+.logo{
+    color:white;
+    float:right;
+    padding-right:50px;
+    padding-top:200px;
+}
+nav{
+    width:800px;
+    height:50px;
+    background:rgba(63, 2, 2, 0.89);
+}
+nav ul{
+    list-style:none;
+}
+nav ul li{
+    float:left;
+    margin-top:4px;
+    margin-left:30px;
+}
+nav ul li a{
+    font-size: 14px;
+    display:block;
+    text-decoration: none;
+    text-align:center;
+    color:white;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+}
+nav ul li a:hover{
+    background-color:yellowgreen;
+    color:black;
+    border-radius: 20px;
+}
+
+.content{
+    overflow:hidden;
+} 
+/* 이거왜..? 해야하니?
+*/
+
+.content section{
+    width:550px;
+    height:510px;
+    float:left;
+    background-color: lightgray;
+}
+.content h3{
+    text-align:center;
+    padding: 10px 0;
+}
+
+.content article{
+    width: 250px;
+    height: 200px;
+    border: 1px solid black;
+    background:white;
+    float:left;
+    margin: 0 10px 20px 10px;
+}
+.content article h4{
+    background-image: url(../images/kong.png);
+    background-repeat: no-repeat;
+    padding-left:20px;
+}
+.content article p{
+    padding-bottom:10px;
+    font-size:14px;
+}
+.content aside{
+    width:250px;
+    height:510px;
+    text-align:center;
+    float:right;
+    background-color: rgb(97, 74, 74)
+}
+aside img{
+    width: 220px;
+    text-align:center;
+    margin-bottom:10px;
+}
+footer{
+    background-color:rgb(146, 146, 146);
+    height:50px;
+    line-height: 50px;
+    text-align:center;
+    color:white;
+}
+
+

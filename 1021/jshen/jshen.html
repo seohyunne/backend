@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!-- http://bhher1.dothome.co.kr/ -->
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jshen</title>
+    <style>
+        *{margin:0; padding:0;}
+        ul li{list-style:none;}
+        a{text-decoration: none; color:#969696;}
+        .nav{
+            width:100%;
+        }
+        .nav>ul{
+            position:relative;
+            height:54px;
+            text-align:center;
+            overflow:hidden;
+            transition: all 0.4s;
+            background-color: white;
+            border-bottom: 1px solid #b6b6b6;
+        }
+        .nav>ul:hover{
+            height:220px;
+        }
+        .nav>ul>li{
+            display:inline-block;
+            vertical-align: top;
+            /* li 요소 갯수 안 맞아서 아래부터 뜨면 vetical-align: top */
+        }
+        .nav>ul>li a{
+            display:block;
+            padding: 15px 50px;
+            text-align:left;
+        }
+
+
+
+        .sub li a{
+            font-size:14px;
+            display:block;
+        }
+
+        .sub a:hover{
+            text-decoration: underline;
+            color:black;
+        }
+        .hero img{
+            width:100%;
+            position: fixed;
+            top:55px;
+            z-index: -1;
+            /* left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%); */
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="nav">
+		<ul>
+			<li>
+				<a href="">ZISHEN</a>
+				<ul class="sub">
+					<li><a href="">About</a></li>
+					<li><a href="">Lookbook</a></li>
+					<li><a href="">Catalogue</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="">ZISHEN HOMME</a>
+				<ul class="sub">
+					<li><a href="">About</a></li>
+					<li><a href="">Lookbook</a></li>
+					<li><a href="">Catalogue</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="">MEDIA</a>
+				<ul class="sub">
+					<li><a href="">Movie</a></li>
+					<li><a href="">News</a></li>
+					<li><a href="">Event</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="">SERVICE</a>
+				<ul class="sub">
+					<li><a href="">Faq</a></li>
+					<li><a href="">1:1 Service</a></li>
+					<li><a href="">Group Order</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="">SHOP INFO</a>
+				<ul class="sub">
+					<li><a href="">Shop Info</a></li>
+					<li><a href="">Open Guide</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="">COMPANY</a>
+				<ul class="sub">
+					<li><a href="">Company</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div><!-- // nav end -->
+	<div class="hero"><img src="images/hero.jpg" alt=""></div>
+</body>
+</html>
