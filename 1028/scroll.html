@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-3.7.1.js"></script>
+    <title>스크롤(offset)</title>
+    <style>
+        *{margin:0; padding:0;}
+        .box{
+            width:150px;
+            height: 150px;
+        }
+        .box1{background-color:skyblue; position:absolute; top: 300px;}
+        .box2{background-color:pink; position:absolute; top: 700px; left:150px;}
+        .box3{background-color:salmon; position:absolute; top: 1000px; left:300px;}
+        .box4{background-color:aquamarine; position:absolute; top: 1300px; left: 575px}
+        </style>
+
+    <script>
+        $(function(){
+            var abox = $('.box1').offset().top;
+            var bbox = $('.box2').offset().left;
+            // offset 사용 시 숫자 값만 나옴 -> 계산할 때 주로 사용
+            var bbox = parseInt($('.box4').css('top')); // = offset()
+
+            // var dbox = $('.box4').css(top);
+        
+            alert(bbox);
+        })
+    </script>
+
+</head>
+<body>
+    <div class="box box1">박스1</div>
+    <div class="box box2">박스2</div>
+    <div class="box box3">박스3</div>
+    <div class="box box4">박스4</div>
+</body>
+</html>

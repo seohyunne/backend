@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-3.7.1.js"></script>
+    <title>오프셋</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        a {text-decoration: none;}
+        article { width: 100%;height: 100vh;}
+
+        #article1{background-color: cornflowerblue;}
+        #article2{background-color: palegreen;}
+        #article3{background-color: wheat;}
+        #article4{background-color: salmon;}
+        nav{
+            position: fixed;
+            top:0;
+            height:100px;
+            width:100%;
+            background:rgba(255, 255, 255, 0.5);
+        }
+        nav ul{
+            width:1000px; height:100px;
+            margin: 0 auto;
+            list-style: none;
+        }
+        nav ul li {
+            float: left;
+        }
+        nav ul li a {
+            display: block;
+            width: 250px;
+            height: 100px;
+            line-height: 100px;
+            font-size: 32px;
+            color: #000;
+            text-align: center;
+        }
+        nav ul li.on a {
+                    color: orange;
+                    font-weight: bold;
+            }
+        
+            h2 {
+                font-size: 50px;
+                position: fixed;
+                right: 20px;
+                bottom: 20px;
+                background-color: rgba(255, 255, 255, 0.5);
+            }
+        
+        </style>
+
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="on"><a href="#article1">회사소개</a></li>
+            <li><a href="#article2">제품소개</a></li>
+            <li><a href="#article3">커뮤니티</a></li>
+            <li><a href="#article4">다운로드</a></li>
+        </ul>
+    </nav>
+    <section>
+        <article id="article1"></article>
+        <article id="article2"></article>
+        <article id="article3"></article>
+        <article id="article4"></article>
+    </section>
+    <h2>현재스크롤위치 : <span id="sTop">000</span></h2>
+</body>
+<script>
+    $(function(){
+        var a1 = $("section > article").eq(0).offset().top;
+        var a2 = $("section > article").eq(1).offset().top;
+        var a3 = $("section > article").eq(2).offset().top;
+        var a4 = $("section > article").eq(3).offset().top;
+        console.log(a1,a2,a3,a4);  // 0 928 1856 2784
+
+        $(window).scroll(function(){
+            var sct = $(this).scrollTop();
+            $('#sTop').text(sct);
+
+            // 스크롤 위치에 따라 글자 색 변경하기
+            if(sct >= a1){
+                $('nav ul li').removeClass('on');
+                $('nav ul li').eq(0).addClass('on');
+            }
+            if(sct >= a2){
+                $('nav ul li').removeClass('on');
+                $('nav ul li').eq(1).addClass('on');
+            }
+            if(sct >= a3){
+                $('nav ul li').removeClass('on');
+                $('nav ul li').eq(2).addClass('on');
+            }
+            if(sct >= a4){
+                $('nav ul li').removeClass('on');
+                $('nav ul li').eq(3).addClass('on');
+            }
+        });
+
+        $('nav ul li').click(function(){
+            var index = $(this).index()
+            var offset_t = $('section > article').eq(index).offset().top; // 0 928 1856 2784
+            $('html, body').stop().animate({scrollTop:offset_t},800);
+    
+            // 클릭 뿐만 아니라 스크롤 했을 때도 글자 색 변경해야 하므로 여기에 넣으면 xx
+            // 클릭이 아니라 스크롤에 클래스를 부여해야 정상 작동함
+            // $('nav ul li').removeClass('on');
+            // $(this).addClass('on');
+
+            return false;
+        })
+
+
+    })
+</script>
+</html>
