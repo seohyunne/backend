@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="http://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="jquery.mousewheel.min.js"></script>
     <title>offsetLeft</title>
     <style>
         *{margin:0; padding:0;}
@@ -78,7 +79,7 @@
         var a1 = $("section > article").eq(1).offset().left;
         var a2 = $("section > article").eq(2).offset().left;
         var a3 = $("section > article").eq(3).offset().left;
-        console.log(a0, a1, a2, a3);
+        // console.log(a0, a1, a2, a3);
         //article이 화면 왼쪾부터 떨어진거리
     
         
@@ -98,6 +99,27 @@
     
     
     });
+
+    var scrollPosition = 0;
+    $('section > article').mousewheel(function(event,d){
+        // console.log(d);
+        // if(d>0){
+        //     var prev = $(this).prev().offset().left;
+        //     $('html , body').stop().animate({scrollLeft:prev},1000);
+        // }
+        // if(d<0){
+        //     var next = $(this).next().offset().left;
+        //     $('html , body').stop().animate({scrollLeft:next},1000);
+        // }
+        event.preventDefault(); // 세로 스크롤바 사용 금지
+
+        // event.originalEvent.deltaY - 마우스휠 이벤트에서 세로방향 스크롤
+        // 양수값(+100) : 마우스 휠을 아래로
+        // 음수값(-100) : 마우스 휠을 위로
+        console.log(event.originalEvent.deltaY);
+        scrollPosition += event.originalEvent.deltaY;
+        $('html, body').scrollLeft(scrollPosition);
+    })
     
     
     </script>
