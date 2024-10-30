@@ -1,0 +1,105 @@
+*{margin:0; padding:0;}
+ul{list-style: none;}
+a{text-decoration: none; color: #555555;}
+
+header{
+    width:100%;
+    height: 110px;
+    background: url(../img/header_line.png) no-repeat 50% 100%;
+}
+header .logo{
+    width: 252px;
+    height: 50px;
+    background: url(../img/logo.png);
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+/* 메뉴 슬라이드 */
+nav{
+    width:100%;
+    height:50px;
+    box-sizing: border-box;
+    margin-top: 60px;
+}
+nav>ul{
+    width:1200px;  /* 중앙정렬 하기 위해 넓이 지정 */
+    height: 50px;
+    margin: 0 auto;
+    /* margin-top: 50px;  */
+    text-align:center;
+    padding: 0 100px;
+    box-sizing: border-box;  /* padding 포함한 1200으로 만들어서 더 정확하게 중앙정렬 */
+    position: relative;
+    z-index: 15;
+    /* z-index 안 주면 배경 이미지에 가려서 사라짐 */
+}
+nav>ul>li{
+    float:left;
+    display:block;
+    width:200px;
+    height:50px;
+}
+nav>ul>li>a{
+    width:100%;
+    font-size:18px;
+    font-weight:bold;
+    line-height:50px;
+}
+nav ul ul a{
+    display:block;
+    font-size:15px;
+    color: #666;
+    padding: 8px 0 9px; /* 위 아래만 padding 지정 */
+    letter-spacing: -0.05;  /* 글자간격 */
+    font-weight: bold;
+}
+
+nav ul ul a:hover {
+    background: url(../img/menu_hover.png) no-repeat;
+}
+
+nav ul li ul li{
+    width:200px;
+}
+
+nav ul li ul{
+    position:absolute;
+    /* top:75px; */
+    text-align:center;
+    height:0;
+    overflow:hidden;
+    /* height:0; , overflow:hidden; 으로
+    높이 0 이상이면 숨김 처리 (하위메뉴 안 보이게) */
+    transition: all 0.4s;
+    padding-top: 20px;
+
+}
+nav ul:hover li ul{
+    height: 240px;
+}
+
+.shadow{
+    position: absolute;
+    left:0;
+    top:165px;
+    /* header가 relative 이므로 위에서부터 165 떨어진 곳에
+    shadow가 펼쳐져야 한다. (90+75) */
+    width:100%;
+    background-color:white;
+    height:0px;
+    transition: all 0.4s;
+}
+/* nav>ul과 shadow가 동일 선상에 있다 (형제관게)
+둘 다 position을 가지고 있다
+ shadow가 나중에 만들어 져서 더 위에 있으므로 메뉴가 나타나지 않는 것이 정상 
+    =====> 해결 :: nav>ul 에 z-index 주기 */
+
+nav>ul:hover + .shadow{
+    height:240px;
+}
+
+
