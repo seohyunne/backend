@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-3.7.1.js" ></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/jquery.mousewheel.min.js"></script>
+
+    <title>스크롤복습</title>
+    <style>
+        *{margin:0; padding:0}
+        li{list-style:none;}
+        a{text-decoration: none; color: #333;}
+        #menu{
+            width: 100%;
+            height: 100px;
+            background-color:rgba(255, 255, 255, 0.5);
+            position:fixed;
+        }
+        #menu_wrap{
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        #menu li{
+            float:left;
+            margin: 0 auto;
+        }
+
+        #menu li.on a{
+            color: orchid;
+        }
+        #menu li a{
+            display:block;
+            padding: 34px 80px;
+            font-weight: 20px;
+            text-align:center;
+            font-weight:bold;
+            font-size: 25px;
+        }
+
+        article{
+            width:100%;
+            height: 100vh;
+        }
+        #area1{background-color: skyblue;}
+        #area2{background-color: pink}
+        #area3{background-color: palegoldenrod;}
+        #area4{background-color: palegreen}
+        #area5{background-color: sandybrown}
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <div id="menu_wrap">
+            <li class="on"><a href="#">메뉴1</a></li>
+            <li><a href="#">메뉴2</a></li>
+            <li><a href="#">메뉴3</a></li>
+            <li><a href="#">메뉴4</a></li>
+            <li><a href="#">메뉴5</a></li>
+        </div>
+
+    </div>
+    <section>
+        <article id="area1"></article>
+        <article id="area2"></article>
+        <article id="area3"></article>
+        <article id="area4"></article>
+        <article id="area5"></article>
+    </section>
+</body>
+<script>
+    $(function(){
+        $('#menu_wrap li').click(function(){
+            var i = $(this).index();
+            var scrTop = $('section article').eq(i).offset().top;
+            
+            $('html, body').stop().animate({scrollTop:scrTop},1000);  
+            return false;
+        })
+
+        // 스크롤 바뀔 때 메뉴 색 변경
+        $(window).scroll(function(){
+            var scr = $(window).scrollTop(); // scrollTop 과 offset().top 혼동 주의
+
+            $("section article").each(function(n){
+                if(scr>=$('section article').eq(n).offset().top){
+                    $('#menu_wrap li').removeClass('on');
+                    $('#menu_wrap li').eq(n).addClass('on');
+                }
+            })
+        })
+
+        $('section article').mousewheel(function(event,d){
+            // event - 마우스 휠 정보 / d - 마우스 스크롤 방향
+            // 위로 올릴 때 d=1 아래로 내릴 때 d=-1
+            console.log(d);
+            if(d>0){
+                var prev = $(this).prev().offset().top;
+                $('html , body').stop().animate({scrollTop:prev},1000);
+            }
+            if(d<0){
+                var next = $(this).next().offset().top;
+                $('html , body').stop().animate({scrollTop:next},1000);
+            }
+            event.preventDefault();
+        })
+    })
+</script>
+</html>
