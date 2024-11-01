@@ -108,12 +108,3 @@ nav>ul:hover + .shadow{
 
 
 
-#s1{
-    width:100%;
-    position: relative;
-    height: 100px;
-}
-#s1 .slider{
-    position: absolute;
-    top: 100px;
-}

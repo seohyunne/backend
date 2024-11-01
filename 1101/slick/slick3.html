@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slick</title>
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <script src="http://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="js/slick.js"></script>
+<style>
+    *{margin:0; padding:0}
+    #s_wrap{
+        width:100%;
+    }
+    .slider{
+        width:80%;
+        margin: 100px auto;
+    }
+    .slick-slide{
+        margin: 0 20px;
+        transition: all 0.3s ease-in-out;
+        opacity: 0.2;
+    }
+    .slick-slide img{
+        width:100%;
+    }
+    .slick-active{
+        opacity:0.5;
+    }
+    .slick-current{
+        opacity:1;
+    }
+    .slick-center{
+        transform:scale(1.5);
+        z-index:999;
+        position:relative;
+        max-width: 10% !important;
+        max-width: 20% !important;
+    }
+    .slick-list{
+        padding: 45px 60px !important;
+        margin-left: 30px !important;
+    }
+
+    /* 화살표 */
+    .slick-prev::before,
+    .slick-next::before{
+        color:#000;
+    }
+</style>
+<script>
+    $(function(){
+        $('.center').slick({
+            // autoplay:true,
+            // autoplaySpeed:2000, // 슬라이드 속도
+            // Infinity:true, // 무한반복
+
+            centerMode:true,
+            centerpadding:'60px',
+            // 슬라이드 이미지 3개씩 보이고(slidesToShow) 1개씩 이동(slideToScroll)
+            slidesToShow:3,
+            slideToScroll:1,
+
+            responsive:[{
+                // 화면이 1024 이하일 때 바뀔 내용
+                breakpoint:768,
+                settings:{  
+                    slidesToShow:3,
+                    centerMode:true,
+                    centerpadding:'40px',
+                    arrows:true,
+                }
+            },
+            {
+                breakpoint:480,
+                settings:{  
+                    slidesToShow:2,
+                    centerMode:true,
+                    centerpadding:'40px',
+                    arrows:true,
+                }
+            }]
+        });
+    });
+</script>
+</head>
+<body>
+    <div id="s_wrap">
+        <div class="center slider">
+            <div>
+                <img src="images/main_visual_1.jpg" alt="">
+            </div>
+            <div>
+                <img src="images/main_visual_2.jpg" alt="">
+            </div>
+            <div>
+                <img src="images/main_visual_3.jpg" alt="">
+            </div>
+            <div>
+                <img src="images/main_visual_4.jpg" alt="">
+            </div>
+            <div>
+                <img src="images/main_visual_5.jpg" alt="">
+            </div>
+            <div>
+                <img src="images/main_visual_6.jpg" alt="">
+            </div>
+           
+        </div>
+    </div>
+</body>
+</html>
