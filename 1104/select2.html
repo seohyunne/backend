@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-3.7.1.js"></script> 
+    <title>select</title>
+</head>
+<body>
+    <form action="#" name="rel_f">
+        <fieldset>
+            <legend>관련사이트이동</legend>
+            <select name="rel_select" id="rel_select">
+                <option value="http://nl.go.kr">국립중앙도서관</option>
+                <option value="http://nanet.go.kr">국회도서관</option>
+                <option value="http://dlibrary.go.kr">국가전자도서관</option>
+            </select>
+            <input type="image" src="images/rel_site_btn.gif" alt="관련사이트이동">
+        </fieldset>
+    </form>
+    <script>
+        $('form[name=rel_f]').on('submit',function(){
+            var url = $('select',this).val();
+            window.open(url);
+        })
+    </script>
+</body>
+</html>

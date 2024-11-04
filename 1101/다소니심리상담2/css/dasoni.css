@@ -499,6 +499,17 @@ header .gnb>ul{
 	border: 1px solid #4F3A53;
 	color: #4F3A53;}
 
+.s5_title h2, .s5_title img, .s5_title p, .s5_title a{
+	visibility: hidden;
+}
+
+.s5_title h2.slide, .s5_title img.slide, .s5_title p.slide, .s5_title a.slide{
+	animation: slideX 1s;
+	visibility: visible;
+}
+
+
+
 @keyframes slide{
 	0%{
 		opacity: 0;
@@ -507,6 +518,17 @@ header .gnb>ul{
 	100%{
 		opacity: 1;
 		transform: translateY(0%);
+	}
+}
+	
+@keyframes slideX{
+	0%{
+		opacity: 0;
+		transform: translateX(-50%);
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(0%);
 	}
 }
 

@@ -109,6 +109,21 @@ $(window).scroll(function(){
 
 
 
+    if (a1+635*2+420  < sct + 700){
+        $('.s5_title img').addClass('slide');
+    }
+    if (a2+635*2+420  < sct + 700){
+        $('.s5_title h2').addClass('slide');
+    }
+    if (a3+635*2+420  < sct + 700){
+        $('.s5_title p').addClass('slide');
+    }
+    if (a3+635*2+420  < sct + 700){
+        $('.s5_title a').addClass('slide');
+    }
+
+
+
 });
 
 

@@ -9,7 +9,7 @@
     overflow: hidden;
 }
 
-/* 큰 사진 */
+큰 사진
 #mainVisual .visual-item > img{
     width:100%;
     transform: scale(1.2);
