@@ -83,6 +83,7 @@ $(window).scroll(function(){
         },1200)
     }
 
+    // s4
     if (a1+635*2 < sct + 700){
         $('.s4_title img').addClass('slide');
     }
@@ -108,7 +109,7 @@ $(window).scroll(function(){
     }
 
 
-
+    // s5
     if (a1+635*2+420  < sct + 700){
         $('.s5_title img').addClass('slide');
     }
@@ -123,6 +124,36 @@ $(window).scroll(function(){
     }
 
 
+    // s6
+    if (a1+635*2+420+400  < sct + 700){
+        $('.s6_content img').addClass('slide');
+    }
+    if (a2+635*2+420+400  < sct + 700){
+        $('.s6_content h2').addClass('slide');
+    }
+    if (a3+635*2+420+400  < sct + 700){
+        $('.s6_title').addClass('slide');
+    }
+    if (a3+635*2+420+400  < sct + 700){
+        $('.s6_date').addClass('slide');
+    }
+
+
+    // 오른쪽 메뉴 스크롤바
+    var first_top = $('.fix_box').offset().top;  // 스크롤바 높이 (400px)
+
+        
+    // alert(top);
+    var scrollTop = $(window).scrollTop(); // 현재 스크롤 높이
+    
+    $('.fix_box').stop().animate({top:first_top+scrollTop},500)
+    
+
+
+
+    // 팝업창
+
+    $('#popup').draggable();
 
 });
 
