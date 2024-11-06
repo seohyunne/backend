@@ -27,11 +27,17 @@ header #logo img{
     color:white;
 }
 
-#slider #slider1 > img{
-    width:100%;
+/* 사진 크기 자동 조절 */
+#slider1 > img{
     transform: scale(1.3);
-    transition: transform 5s ease-in-out;
+    transition: transform 4s ease-in-out;
 }
+#slider1.active > img{
+    transform: scale(1);
+}
+
+
+
 #slider .title h1{
     font-size: 64px;
 }

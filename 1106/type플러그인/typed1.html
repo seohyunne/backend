@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="typed/typed.js"></script>
+    <script>
+        $(function(){
+           var typed2 = new Typed('#typed1',{
+            string : ['원하는 글씨를','순서대로','출력해준다'],
+            typeSpeed:50,
+            backSpeed:50,
+            fadeOut:false,
+            smartBackspecial:true,
+            cursorChar:'-',
+            loop:true
+           });
+        })
+    </script>
+    <title>타이핑</title>
+</head>
+<body>
+    <span id="typed1"></span>
+</body>
+</html>

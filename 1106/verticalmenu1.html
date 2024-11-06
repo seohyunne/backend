@@ -1,0 +1,138 @@
+<!-- javascript ver -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-3.7.1.js"></script>
+    <style>
+        * {
+           margin: 0;
+           padding: 0;
+       }
+
+       ul {
+           list-style: none;
+       }
+
+       a {
+           text-decoration: none;
+           color: #333;
+       }
+
+       .m_menu {
+           width: 200px;
+           margin: 20px auto;
+           text-align: center;
+       }
+
+       .m_menu>li>a {
+           display: block;
+           height: 36px;
+           background-color: #390;
+           line-height: 36px;
+           border-top: 1px dotted #fff;
+           color: #fff;
+       }
+
+       .m_menu .sub {
+           height: 0;
+           overflow: hidden;
+           transition: all 0.4s;
+       }
+
+       .m_menu .sub li {
+           background-color: #cf9;
+       }
+
+       .m_menu .sub li a {
+           display: block;
+           line-height: 36px;
+           height: 36px;
+           color: #222;
+       }
+
+       .m_menu .sub li a:hover {
+           background-color: #cf0;
+       }
+   </style> 
+    <title>vertical</title>
+</head>
+<body>
+    <ul class="m_menu">
+        <li>
+            <a href="#">회사소개</a>
+            <ul class="sub">
+                <li><a href="#">submenu1</a></li>
+                <li><a href="#">submenu2</a></li>
+                <li><a href="#">submenu3</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">제품소개</a>
+            <ul class="sub">
+                <li><a href="#">submenu1</a></li>
+                <li><a href="#">submenu2</a></li>
+                <li><a href="#">submenu3</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">커뮤니티</a>
+            <ul class="sub">
+                <li><a href="#">submenu1</a></li>
+                <li><a href="#">submenu2</a></li>
+                <li><a href="#">submenu3</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">다운로드</a>
+            <ul class="sub">
+                <li><a href="#">submenu1</a></li>
+                <li><a href="#">submenu2</a></li>
+                <li><a href="#">submenu3</a></li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        var sub = document.querySelectorAll('.sub');
+        var menu = document.querySelectorAll('.m_menu>li>a');
+
+        // menu.forEach(function(item){
+        //     item.addEventListener('click',function(){
+        //         slideUp();
+        //         var subHeight = getComputedStyle(this.nextElementSibling).height;
+        //         // getComputedStyle 은 DOM요소의 현재 스타일을 가져오기 위한 메서드
+        //         // -> 특정 요소에 적용된 모든 스타일 속성과 그 값에 대한 정보를 얻을 수 있다
+        //         // alert(subHeight);
+        //         if (subHeight==='0px'){
+        //             slideUp(); // 현재 열려있는 모든 sub 닫기
+        //             this.nextElementSibling.style.height = '108px';
+        //         }
+        //         else{
+        //             this.nextElementSibling.style.height = '0px';
+        //         }
+        //     })
+        // })
+
+        for(var i=0; i<menu.length; i++){
+            slideUp();
+            menu[i].addEventListener('click',function(){
+                var subHeight = getComputedStyle(this.nextElementSibling).height;
+                if (subHeight==='0px'){
+                    slideUp(); // 현재 열려있는 모든 sub 닫기
+                    this.nextElementSibling.style.height = '108px';
+                }
+                else{
+                    this.nextElementSibling.style.height = '0px';
+                }
+            })
+        }
+
+        function slideUp(){
+            sub.forEach(function(item){
+                item.style.height='0px';
+            })
+        }
+    </script>
+</body>
+</html>

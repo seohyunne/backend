@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-3.6.0.js"></script>
+    <title>카운트</title>
+<script>
+    var number = $('#num').text();  // text()에 아무것도 안 넣으면 현재 있는 글자나 숫자 읽어오기
+    $(function(){
+        $({percent:0}).animate({percent:111},{
+            duration:3000,
+            progress:function(){
+                var now = this.percent;
+                $('#num').text(Math.ceil(now)); // 소수점 이하 올림
+            }
+        })
+    })
+</script>
+</head>
+<body>
+    <h1 id="num">000</h1>
+</body>
+</html>
