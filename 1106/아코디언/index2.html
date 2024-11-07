@@ -90,4 +90,31 @@
             ABCD GDFSADSSDFS </p></dd>
     </dl>
 </body>
+<!-- <script>
+    $(function(){
+        $('dl>dd').hide();
+        $('dl>dd').eq(0).show();
+        $('dl>dt').eq(0).addClass('selected');
+
+        $('dl dt').click(function(){
+            if ($(this).next().css('display','none')){
+                $('dl dd').slideUp();
+                $(this).next().slideDown();
+                $('dl dt').removeClass('selected');
+                $(this).addClass('selected');
+            }else{
+                $(this).removeClass('selected');
+                $(this).next().slideUp();
+            }
+
+
+
+        })
+
+        $('dl dt').mouseover(function(){
+            $('dl dt').removeClass('over');
+            $(this).addClass('over');
+        })
+    })
+</script> -->
 </html>

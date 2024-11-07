@@ -1,0 +1,39 @@
+body{
+    height: 3300px;
+}
+h1{
+    font-size:100%;
+}
+.indicator{
+    position:fixed;
+    right:10px;
+    top:10px;
+}
+li{
+    list-style:none;
+    height:60px;
+    top:40px;
+    width:60px;
+    position:fixed;
+}
+#item1{
+    background:hotpink;
+    left:20px;
+}
+#item2{
+    background:palegreen;
+    left:100px;
+}
+#item3{
+    background:powderblue;
+    left:180px;
+}
+#item4{
+    background:plum;
+    left:260px;
+}
+#item5{
+    background:palegoldenrod;
+    left:340px;
+}
+

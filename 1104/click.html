@@ -22,10 +22,11 @@
         var c = 0; // 현재 인덱스
         document.querySelector('#colorButton').addEventListener('click',function(){
             document.body.style.backgroundColor=colors[c];
-            c++;
-            if(c == colors.length){
-                c=0;
-            }
+            // c++;
+            // if(c == colors.length){
+            //     c=0;
+            // }
+            c = (c+1) % colors.length;
         })
         // $('button').click(function(){
         //     for (var i=0; i<colors.length ; i++){

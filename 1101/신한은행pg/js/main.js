@@ -3,4 +3,6 @@ $(function(){
         auto:true,
         mode:'fade',
     });
+
+    $('#slider1').
 })

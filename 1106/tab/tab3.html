@@ -23,6 +23,19 @@
         .tab_list li{display: none;}
         .tab_list li.on{display: block;}
     </style>
+    <script>
+        $(function(){
+            $('.tab_menu li').click(function(){
+                var i = $(this).index();
+
+                $('.tab_menu li').removeClass('on');
+                $(this).addClass('on');
+
+                $('.tab_list li').removeClass('on');
+                $('.tab_list li').eq(i).addClass('on');
+            })
+        })
+    </script>
 </head>
 <body>
     <div class="tab">
@@ -53,17 +66,17 @@
         </ul>
     </div>
     <script>
-        $(function(){
-            $('.tab_menu li').click(function(){
-                var index = $(this).index();
+        // $(function(){
+        //     $('.tab_menu li').click(function(){
+        //         var index = $(this).index();
 
-                $('.tab_menu li').removeClass('on');
-                $(this).addClass('on');
+        //         $('.tab_menu li').removeClass('on');
+        //         $(this).addClass('on');
 
-                $('.tab_list li').removeClass('on');
-                $('.tab_list li').eq(index).addClass('on');
-            })
-        })
+        //         $('.tab_list li').removeClass('on');
+        //         $('.tab_list li').eq(index).addClass('on');
+        //     })
+        // })
     </script>
 </body>
 </html>

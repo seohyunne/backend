@@ -120,8 +120,7 @@ body{font-family: 'Noto Sans KR', sans-serif; }
 
 /* 무비차트 */
 #contents{
-    width:100%;
-
+    width: 100%;
 }
 #movieChartBeScreen_wrap{
     width: 100%;
@@ -157,14 +156,37 @@ body{font-family: 'Noto Sans KR', sans-serif; }
     background: url(../img/arrowR_8x13.png) no-repeat 75px center/10px;
 }
 
-.movieChart_list{margin-top: 20px;}
+.movieChart_list{
+    margin-top: 20px;
+    width:100%;
+    overflow:hidden;
+    position:relative;
+
+
+}
+.movieChart_list .listWrap{
+    /* 높이 295+20 */
+    /* width:100%; */
+    width:5000px;
+    position: relative;
+    /* overflow:hidden; */
+    transition: all 0.3s;
+}
+
 .movieChart_list .listWrap .slideBox{
     width: 170px;
     float: left;
     margin-right: 32px;
-    position: relative;
     counter-increment: myIndex;
+
 }
+/* .movieChart_list .listWrap .slideBox:nth-child(5),
+.movieChart_list .listWrap .slideBox:nth-child(10),
+.movieChart_list .listWrap .slideBox:nth-child(15),
+.movieChart_list .listWrap .slideBox:nth-child(20){
+    margin-right:0;
+} */
+
 .movieChart_list .listWrap .slideBox::after{
     content: counter(myIndex);
     color: #fff;
@@ -227,12 +249,86 @@ body{font-family: 'Noto Sans KR', sans-serif; }
 .arrow_wrap{
 
 }
-.arrow_wrap .prev{
+.arrow_wrap .next{
     background: rgba(255,255,255,0.5) url('../img/arrowR_5x9.png') no-repeat 55% 50%;
     width:40px;
     height:40px;
     border-radius: 50%;
     position: absolute;
-    top: 100px;
+    top: 200px;
     right: -25px;
+    z-index: 100;
 }
+.arrow_wrap .prev{
+    background: rgba(255,255,255,0.5) url('../img/arrowL.png') no-repeat 45% 50%;
+    width:40px;
+    height:40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 200px;
+    left: -25px;
+    z-index: 100;
+}
+
+
+#event_wrap{
+    width:100%;
+    height:400px;
+    background: #fff;
+    position: relative;
+}
+.event_title_wrap{
+    padding-top:60px;
+}
+.event_title_wrap h3{
+    float:left;
+    font-size:24px;
+    font-weight: bold;
+    margin-bottom:20px;
+}
+.event_title_wrap .btn_allView{
+    float:right;
+    border: 1px solid #ccc;
+    padding: 7px 30px 7px 10px;
+    display: block;
+    border-radius: 20px;
+    text-decoration: none;
+    color:#222;
+    font-size:14px;
+    background: url(../img/arrowR_8x13.png) no-repeat 75px center/10px;
+}
+.event_title_wrap .btn_eventCntrol{
+    float: right;
+    background: url(../img/stop.png) no-repeat center center/9px 13px;
+    width: 28px;
+    height: 28px;
+    font-size: 0;
+    border: 1px solid #e3e3e3;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.event_title_wrap .btn_eventCntrol.on{
+    background: url(../img/play.png) no-repeat center center/9px 13px;
+}
+.event_list_wrap{
+    width:980px;
+    margin-top: 30px;
+}
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+  }
