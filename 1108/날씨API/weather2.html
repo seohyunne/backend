@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+    <title>날씨</title>
+<script>
+    $(function(){
+        $(document).ready(function(){
+            // 아래 링크에서 forecast -> weather 로 바꾸면 현재 날씨
+            $.getJSON("https://api.openweathermap.org/data/2.5/weather?id=1835553&appid=a9969133ea1757025bc77074c896de2f&units=metric", function(data){
+                // alert(data.cod);
+                // alert(data.city.name)
+                // alert(data.list[1].main.temp);
+                var $ctemp = data.main.temp;
+                var $maxTemp = data.main.temp_max;
+                var $minTemp = data.main.temp_min;
+                
+                var $wIcon = data.weather[0].icon;  
+
+                var $now = new Date();
+                // var $cDate = $now.getFullYear()+'/'+$now.getMonth()+'/'+ $now.getDate()
+                // + ' ' + + $now.getHours()+':'+ $now.getMinutes();
+                // var $cDate = new Date().toLocaleDateString();
+                
+                var $cDate = new Date().toLocaleString('ko-KR', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' });
+                $('.ctemp').append($ctemp);
+                $('.chightemp').append($maxTemp);
+                $('.clowtemp').append($minTemp);
+                $('h2').prepend($cDate);
+                $('.cicon').append('<img src="https://openweathermap.org/img/wn/'+$wIcon+'@2x.png">');
+                $('.cicon').append(`<img src="https://openweathermap.org/img/wn/${$wIcon}@2x.png"`);
+            });
+            });
+});
+
+</script>
+</head>
+<!-- 날씨api 키 값: a9969133ea1757025bc77074c896de2f -->
+<!-- http://api.openweathermap.org/data/2.5/forecast?id=1835553&appid=a9969133ea1757025bc77074c896de2f -->
+<!-- 수원 도시코드 1835553 -->
+<!-- http://api.openweathermap.org/data/2.5/forecast?id=1835848&appid=a9969133ea1757025bc77074c896de2f -->
+<!-- 서울 도시코드 1835848 -->
+<!-- 주소 끝에 &units-metric 쓰면 자동으로 섭씨 온도로 변환 !-->
+
+<!-- https://openweathermap.org/weather-conditions -->
+<!-- 아이콘 주소 : https://openweathermap.org/img/wn/10d@2x.png -->
+
+<body>
+    <h1>Weather api</h1>
+    <h2> - 날씨예보</h2>
+    <div class="ctemp">현재온도 : </div>
+    <div class="clowtemp">최저온도 : </div>
+    <div class="chightemp">최고온도 : </div>
+    <div class="cicon">아이콘</div>
+    <!-- <img src="https://openweathermap.org/img/wn/10d@2x.png" alt=""> -->
+</body>
+</html>

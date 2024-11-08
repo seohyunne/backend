@@ -57,5 +57,14 @@ $(function(){
         return false;
     })
 
+    $('.specialHall_list li').mouseover(function(){
+        var i = $(this).index();
+        $('.specialHall_content .tapContent a').hide();
+        $('.specialHall_content .tapContent a').eq(i).show();
+        $('.specialHall_list li').removeClass('on');
+        $('.specialHall_list li').eq(i).addClass('on');
+        return false;
+    })
+
 
 })

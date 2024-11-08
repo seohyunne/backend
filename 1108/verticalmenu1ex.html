@@ -1,60 +1,62 @@
-<!-- jQuery ver -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="http://code.jquery.com/jquery-3.7.1.js"></script>
-    <style>
-        * {
-           margin: 0;
-           padding: 0;
-       }
+    <script src='https://code.jquery.com/jquery-3.7.0.min.js'></script>
+    <title>Document</title>
+<style>
+     * {
+            margin: 0;
+            padding: 0;
+        }
 
-       ul {
-           list-style: none;
-       }
+        ul {
+            list-style: none;
+        }
 
-       a {
-           text-decoration: none;
-           color: #333;
-       }
+        a {
+            text-decoration: none;
+            color: #333;
+        }
 
-       .m_menu {
-           width: 200px;
-           margin: 20px auto;
-           text-align: center;
-       }
+        .m_menu {
+            width: 200px;
+            margin: 20px auto;
+            text-align: center;
+        }
 
-       .m_menu>li>a {
-           display: block;
-           height: 36px;
-           background-color: #390;
-           line-height: 36px;
-           border-top: 1px dotted #fff;
-           color: #fff;
-       }
+        .m_menu>li>a {
+            display: block;
+            height: 36px;
+            background-color: #390;
+            line-height: 36px;
+            border-top: 1px dotted #fff;
+            color: #fff;
+        }
 
-       .m_menu .sub {
+        .m_menu .sub {
+            display:none;
+            overflow: hidden;
+            /* transition: all 0.4s; */
+        }
 
-       }
+        .m_menu .sub li {
+            background-color: #cf9;
+        }
 
-       .m_menu .sub li {
-           background-color: #cf9;
-       }
+        .m_menu .sub li a {
+            display: block;
+            line-height: 36px;
+            height: 36px;
+            color: #222;
+        }
 
-       .m_menu .sub li a {
-           display: block;
-           line-height: 36px;
-           height: 36px;
-           color: #222;
-       }
+        .m_menu .sub li a:hover {
+            background-color: #cf0;
+        }
+</style>
 
-       .m_menu .sub li a:hover {
-           background-color: #cf0;
-       }
-   </style> 
-    <title>vertical</title>
 </head>
 <body>
     <ul class="m_menu">
@@ -93,11 +95,9 @@
     </ul>
     <script>
         $(function(){
-            $('.sub').hide();
-            $('.sub').eq(0).show();
+
             $('.m_menu>li>a').click(function(){
-                var display = $(this).next().css('display');
-                if (display=='none'){
+                if($(this).next().css("display")=='none'){
                     $('.sub').slideUp();
                     $(this).next().slideDown();
                 }
@@ -105,12 +105,6 @@
                     $('.sub').slideUp();
                 }
             })
-        })
-
-
-        $(function(){
-            $('.sub').hide();
-            $('.sub').eq(0).show();
         })
     </script>
 </body>

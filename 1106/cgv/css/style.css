@@ -125,7 +125,7 @@ body{font-family: 'Noto Sans KR', sans-serif; }
 #movieChartBeScreen_wrap{
     width: 100%;
     height: 461px;
-    background: #ddd;
+    background: #e9e9e9;
     position:relative;
 }
 #movieChartBeScreen_wrap .container{position: relative;  padding: 50px 0px 60px;}
@@ -250,7 +250,8 @@ body{font-family: 'Noto Sans KR', sans-serif; }
 
 }
 .arrow_wrap .next{
-    background: rgba(255,255,255,0.5) url('../img/arrowR_5x9.png') no-repeat 55% 50%;
+    background: rgba(255, 255, 255, 0.37) url('../img/arrowR_8x13.png') no-repeat 55% 50%;
+    background-size: 9px 15px;  
     width:40px;
     height:40px;
     border-radius: 50%;
@@ -260,7 +261,8 @@ body{font-family: 'Noto Sans KR', sans-serif; }
     z-index: 100;
 }
 .arrow_wrap .prev{
-    background: rgba(255,255,255,0.5) url('../img/arrowL.png') no-repeat 45% 50%;
+    background: rgba(255, 255, 255, 0.438) url('../img/arrowL.png') no-repeat 55% 50%;
+    background-size: 9px 15px;  
     width:40px;
     height:40px;
     border-radius: 50%;
@@ -332,3 +334,150 @@ body{font-family: 'Noto Sans KR', sans-serif; }
     object-fit: cover;
 
   }
+
+
+#specialHall_wrap{
+    width:100%;
+    height: 400px;
+    background: white;
+}
+.specialHall_title_wrap{
+    padding-top:60px;
+}
+.specialHall_title_wrap h3{
+    float:left;
+    font-size:24px;
+    font-weight: bold;
+    margin-bottom:20px;
+}
+.specialHall_title_wrap .btn_allView{
+    float:right;
+    border: 1px solid #ccc;
+    padding: 7px 30px 7px 10px;
+    display: block;
+    border-radius: 20px;
+    text-decoration: none;
+    color:#222;
+    font-size:14px;
+    background: url(../img/arrowR_8x13.png) no-repeat 75px center/10px;
+}
+.specialHall_content{margin-top:50px;}
+.specialHall_content .tapContent{
+    position: relative;
+    float:left;
+}
+.specialHall_content .tapContent a{
+    width: 500px;
+    position:absolute;
+    display:none;
+}
+.specialHall_content .tapContent a:first-child{ display:block;}
+.tapContent a .img_wrap img{  
+    width: 100%;
+
+}
+.specialHall_list{
+    float:right;
+    width: 440px;
+    border-top: 1px solid #ddd;
+}
+/* hover 할 때 글자 안 움직이게 하기
+-> border에 투명선 주고 bottom 에만 컬러 입히기 */
+.specialHall_list li{
+    border:  1px solid transparent;
+    border-bottom-color: #ddd;
+    box-sizing: border-box;
+}
+.specialHall_list li.on{
+    border: 1px solid #464343;
+    border-radius: 10px;
+}
+
+.specialHall_list li a{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    text-decoration: none;
+    color: #333;
+}
+.specialHall_list li a strong{
+    font-weight: bold;
+    font-size: 18px
+}
+
+.specialHall_hashTag_wrap{
+    background:#efefef;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.specialHall_list li a .specialHall_hashTag{
+
+}
+
+#section5{
+    width:100%;
+    height: 375px;
+    background: white;
+
+}
+#section5 #sec5_wrap{
+    padding-top:60px;
+    width: 980px;
+    margin: 0 auto;
+}
+
+#section5 #sec5_wrap .box{
+    width: 300px;
+    height: 325px;
+    border-radius: 10px;
+    border: 1px solid #9e9e9e;
+    box-sizing: border-box;
+    float:left;
+    margin-right: 40px;
+}
+#section5 #sec5_wrap .box:last-child{
+    margin-right: 0px;
+}
+
+#section5 #sec5_wrap .box h2{
+    font-size: 20px;
+    /* font-weight:bold; */
+    padding: 20px;
+    padding-left: 25px;
+}
+#section5 #sec5_wrap .box .sbox{
+    display:block;
+    width: 270px;
+    height: 80px;
+    padding-top: 4px;
+    padding-left: 20px;
+    color:#666;
+    text-decoration: none;
+}
+
+#section5 #sec5_wrap .box img{
+    width: 75px;
+    height: 75px;
+    float:left;
+}
+
+#section5 #sec5_wrap .box p{
+    float:left;
+    padding-left: 10px;
+    line-height: 20px;
+    padding-top: 15px;
+}
+
+#section5 .btn_moreView{
+    float:right;
+    border: 1px solid #ccc;
+    display: block;
+    border-radius: 20px;
+    text-decoration: none;
+    color:#222;
+    font-size:14px;
+    padding: 5px 10px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
